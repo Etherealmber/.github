@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Etherealmber/atlas-commerce/main/public/logo-mark.svg" alt="loxdpy" width="110" height="110" />
+<img src="https://avatars.githubusercontent.com/u/318825377?v=4&s=240" alt="Etherealmber" width="120" height="120" />
 
-# loxdpy · Etherealmber
+# Etherealmber
 
 **Software that runs real businesses — at the edge, without the SaaS tax.**
 
@@ -15,57 +15,101 @@
 ![Stack](https://img.shields.io/badge/TypeScript-React%20%C2%B7%20Vite%20%C2%B7%20D1%20%C2%B7%20R2-3178c6?style=flat-square&logo=typescript&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-3da639?style=flat-square)
 
-[**Atlas Commerce**](https://github.com/Etherealmber/atlas-commerce) · [Projects](#-projects) · [Stack](#-how-we-build) · [Contact](#-contact)
+[Projects](#-projects) · [How we build](#-how-we-build) · [Contact](#-contact)
 
 </div>
 
 ---
 
-## 👋 Who we are
+## 🏛️ Who we are
 
-**loxdpy** is a one-person studio based in El Jadida, Morocco, building software for the kind of businesses that keep the country running: wholesalers, shops, warehouses, workshops and family companies.
+**Etherealmber** is a small software organization based in El Jadida, Morocco, building tools for the businesses that keep the country running: wholesalers, shops, warehouses, workshops and family companies.
 
-We don't sell subscriptions to a black box. Everything here is **self-hosted, edge-deployed and owned by the business that uses it** — the data lives in the client's own Cloudflare account, the invoices belong to the client, and the code is small enough to audit.
+The work is done through **loxdpy** — the studio behind the org, maintained by **[Haytam · @loxdpsy](https://github.com/loxdpsy)**.
 
-> **loxdpy** — GitHub [@loxdpsy](https://github.com/loxdpsy) · Org: **Etherealmber**
-> Interface et documentation en **français** pour le terrain marocain · UI/docs in French for the Moroccan field, code and APIs in English.
+We don't sell subscriptions to a black box. Everything here is **self-hosted, edge-deployed and owned by the business that uses it** — the data sits in the client's own Cloudflare account, the invoices belong to the client, and the code stays small enough to audit.
+
+> Interface et documentation en **français** pour le terrain marocain · UI and docs in French for the Moroccan field, code and APIs in English.
 
 ---
 
 ## 🚀 Projects
 
-### [Atlas Commerce](https://github.com/Etherealmber/atlas-commerce) · flagship
+### 🧾 [Atlas Commerce](https://github.com/Etherealmber/atlas-commerce)
 
-> **ERP / Caisse / Facturation souverain pour commerces & grossistes au Maroc**
+**ERP / caisse / facturation souverain pour commerces & grossistes au Maroc.** A complete back-office for Moroccan retail and wholesale: multi-warehouse stock, a fast checkout, VAT invoicing, purchasing, payroll and cash balance — with **no SaaS subscription and no dedicated server**.
 
-A complete back-office for Moroccan retail and wholesale: multi-warehouse stock, a fast checkout with VR receipts, VAT invoicing with receivables and refunds, purchasing, quotes, employees & payroll, cash balance — with **no opaque SaaS subscription and no dedicated server**.
-
-| What it does | How |
+| | |
 |---|---|
-| **Stock** | multi-warehouse, bin locations, lots + FEFO expiry, audited movements, rolling inventory, transfers, kits/BOM |
-| **Checkout** | VR receipts without VAT, multi-method payments, refunds, cash drawer balance |
-| **Invoicing** | VAT invoices, receivables & due dates, credit notes, CSV exports, status pipeline + journal |
-| **Scan & OCR** | native barcode scanning, photo-driven product requests, invoice/quote OCR |
-| **Atlas Agent (AI)** | "create a client named X" opens a pre-filled form — explicit confirmation before anything runs |
+| **Stock** | multi-warehouse, bin locations, lots + FEFO expiry, audited movements, transfers, kits/BOM |
+| **Checkout** | VR receipts without VAT, multi-method payments, refunds, cash drawer |
+| **Invoicing** | VAT invoices, receivables & due dates, credit notes, CSV export, status pipeline |
+| **Scan & OCR** | native barcode scanning, photo-based product requests, invoice/quote OCR |
+| **Atlas Agent** | AI that pre-fills a client/product sheet, with explicit confirmation before anything runs |
 | **Auth** | password + OTP, WebAuthn / passkeys, 60-second single-use QR login (phone ↔ desktop) |
 | **Field app** | offline-first Capacitor Android shell, roles (owner / admin / stock / terrain), OTA updates |
 
-<sub>`Cloudflare Workers` · `Hono` · `D1 (SQLite)` · `R2` · `React + Vite + TypeScript` · `Capacitor Android` · MIT © 2026 loxdpsy · v1.4.5-beta</sub>
+`Cloudflare Workers` · `Hono` · `D1` · `R2` · `React + Vite + TypeScript` · `Capacitor` · MIT · v1.4.5-beta
 
-Also shipping a **Partner API v1** (scoped API keys, idempotent invoice writes, OpenAPI), **event webhooks** (`stock.*`, `doc.*`, `kit.assembled`, `atlas.alert`), and print-ready **product labels** (QR + CODE128 + price).
+Also ships a **Partner API v1** (scoped keys, idempotent invoice writes, OpenAPI), **event webhooks** (`stock.*`, `doc.*`, `kit.assembled`, `atlas.alert`) and print-ready **product labels** (QR + CODE128 + price).
 
 ---
 
-### Client & side builds
+### 🪨 [afmarbre-main](https://github.com/loxdpsy/afmarbre-main)
 
-| Project | What it is | Stack |
-|---|---|---|
-| [**afmarbre-main**](https://github.com/loxdpsy/afmarbre-main) | Web platform for **A-F Marbre**, a marble & natural-stone studio — catalogue and presentation site | TanStack Start · React · TypeScript · Tailwind |
-| [**support-page**](https://github.com/loxdpsy/support-page) | Premium support portal at **support.afmarbre.com** — custom-domain Worker, tickets with unique references, Turnstile + honeypot, email routing, shared light/dark theme across `*.afmarbre.com` | Cloudflare Workers · Cloudflare Email |
-| [**archi-convert**](https://github.com/loxdpsy/archi-convert) | Unit converter and **material estimator for architecture work** — quantities and conversions on site | JavaScript · Cloudflare Workers |
-| [**toolkit**](https://github.com/loxdpsy/toolkit) | Browser-first file tools: format converter, **background remover (WebGPU)**, image → text OCR, PDF → Word | TypeScript · Vite · Workers · Mistral OCR |
+The web platform for **A-F Marbre**, a marble and natural-stone studio: public catalogue of slabs and materials, project/atelier pages, services, contact, and a quote-request flow — plus a private **CMS admin** (`/admin`) for products, categories, quotes, media and page content.
 
-There's also a **Mistral-powered assistant** living on Workers + D1 (`chat.afmarbre.com`) — kept private per client, API keys never exposed to the browser.
+- Runs entirely on a **Cloudflare Worker** — KV (CMS content), **D1** (products, quotes), **R2** (media). No runtime dependency on the site builder it started from.
+- French-first UI, marble/stone art direction, responsive desktop + mobile.
+- Quote submissions handled server-side with validation.
+
+`TanStack Start` · `React` · `TypeScript` · `Tailwind` · `Workers` · `KV` · `D1` · `R2`
+
+---
+
+### 🛠️ [support-page](https://github.com/loxdpsy/support-page)
+
+The support portal at **[support.afmarbre.com](https://support.afmarbre.com/)** — a dedicated Cloudflare Worker on a custom domain, with the main WordPress site left untouched on `afmarbre.com`.
+
+- Support request workflow with **unique reference numbers**, FAQ, contact and showroom details.
+- **Cloudflare Turnstile**, validation, honeypot, and email delivery with the customer address as `Reply-To`.
+- Light / dark / system theme shared across `*.afmarbre.com` through a first-party `afmarbre_theme` cookie.
+- `/health` endpoint for uptime checks.
+
+`Cloudflare Workers` · `Cloudflare Email` · `Turnstile` · vanilla JS
+
+---
+
+### 📐 [archi-convert](https://github.com/loxdpsy/archi-convert)
+
+**Universal Converter** — a zero-install toolbox for architecture and site work, all in the browser.
+
+- **Unit conversion** for lengths, surfaces, volumes and weights.
+- **Material estimator** — quantities for slabs, tiles, plaster, concrete and similar site materials.
+- **Calculator** for quick on-site arithmetic, plus a **weather** tab for planning pours and deliveries.
+- Plain HTML/CSS/JS, no build step, no backend, light/dark themes.
+
+`HTML` · `CSS` · `Vanilla JavaScript`
+
+---
+
+### 🧰 [toolkit](https://github.com/loxdpsy/toolkit)
+
+A file toolkit that runs in the browser, with a thin Worker only where a backend is unavoidable.
+
+- **Format converter** — fully client-side (canvas), no upload.
+- **Background remover** — on-device via **WebGPU** when available, automatic fallback, no API key.
+- **Image → text (OCR)** — reads real notation, returns LaTeX for formulas.
+- **PDF → Word** — same OCR pipeline, Markdown converted to a genuine `.docx` in the browser.
+- Backed by a **Worker + D1** (accounts, sessions, conversations, attachments) with the API key kept as a server secret — never exposed to visitors.
+
+`TypeScript` · `Vite` · `Workers` · `D1` · `Mistral OCR` · `WebGPU`
+
+---
+
+### 🤖 A-F Marbre assistant
+
+A **Mistral-powered assistant** at `chat.afmarbre.com`, running on the same Workers + D1 pattern as `toolkit`: private API key held by the Worker, per-client conversations, login and settings. Kept out of the public repos so client keys and data stay private.
 
 ---
 
@@ -80,9 +124,7 @@ French terrain    UI written for the field, in the language of the field
 small surface     monolith peeled into routes / repositories / services
 ```
 
-**Principles**
-
-- 🔒 **Ownership over convenience** — the merchant owns the database, the backups and the code.
+- 🔒 **Ownership over convenience** — the business owns the database, the backups and the code.
 - ⚡ **Fast where it hurts** — one scan, one keypress, one ticket. No wizard that gets in the way.
 - 🧩 **Boring infrastructure** — one Worker, one SQLite database, one bucket. Fewer moving parts to break.
 - 🇲🇦 **Local reality first** — ICE/IF, VAT, VR receipts, French labels, phone-first usage.
@@ -104,8 +146,8 @@ small surface     monolith peeled into routes / repositories / services
 ## 📬 Contact
 
 - 🐛 **Bugs & features** — [open an issue](https://github.com/Etherealmber/atlas-commerce/issues/new)
-- 🔐 **Security** — report privately (GitHub security advisory or direct message to [@loxdpsy](https://github.com/loxdpsy)); please don't disclose publicly before a fix
-- 🤝 **Work with us** — demos and internal deployments: reach the owner on GitHub
+- 🔐 **Security** — report privately (GitHub security advisory or a direct message to [@loxdpsy](https://github.com/loxdpsy)); please don't disclose publicly before a fix
+- 🤝 **Work with us** — demos and deployments: reach the studio on GitHub
 - 🌍 **Based in** El Jadida, Morocco · working across the country
 
 <div align="center">
@@ -114,6 +156,6 @@ small surface     monolith peeled into routes / repositories / services
 
 **Built in Morocco, deployed on the edge.** 🇲🇦
 
-<sub>MIT © 2026 loxdpsy · <a href="https://github.com/Etherealmber/.github">source of this profile</a></sub>
+<sub>Etherealmber · studio <a href="https://github.com/loxdpsy">loxdpy</a> · MIT © 2026</sub>
 
 </div>
