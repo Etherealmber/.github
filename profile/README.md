@@ -6,17 +6,18 @@
 
 **One connected system for Moroccan commerce — built at the edge, owned by the business that runs it.**
 
-<sub>Atlas Commerce · Atlas Shop · Atlas Commerce for Android · Support</sub>
+<sub>Atlas Commerce (web · Android · desktop) · Atlas Shop · Support</sub>
 
 <br />
 
+![Repos](https://img.shields.io/badge/repositories-5-24292f?style=flat-square&logo=github)
+![Commits](https://img.shields.io/badge/commits-950%2B-24292f?style=flat-square)
+![PRs](https://img.shields.io/badge/pull%20requests-259%20merged-2ea44f?style=flat-square)
+![Releases](https://img.shields.io/badge/releases-54-2ea44f?style=flat-square)
+![License](https://img.shields.io/badge/license-MIT-3da639?style=flat-square)
 ![Location](https://img.shields.io/badge/based%20in-Morocco-c1272d?style=flat-square)
-![Edge](https://img.shields.io/badge/runs%20on-Cloudflare%20Workers-f38020?style=flat-square&logo=cloudflare&logoColor=white)
-![Stack](https://img.shields.io/badge/TypeScript-React%20%C2%B7%20Vite%20%C2%B7%20D1%20%C2%B7%20R2-3178c6?style=flat-square&logo=typescript&logoColor=white)
-![Status](https://img.shields.io/badge/2026-Commerce%20%2B%20Android-2ea44f?style=flat-square)
-![Status](https://img.shields.io/badge/2027-Complete%20suite-8b5cf6?style=flat-square)
 
-[What we do](#-what-we-do) · [What we're building](#-what-were-building) · [Roadmap](#-roadmap) · [Contact](#-contact)
+[What we do](#-what-we-do) · [Repositories](#-repositories) · [Done](#-what-is-done) · [Not done yet](#-what-is-not-done-yet) · [Roadmap](#-roadmap) · [Contact](#-contact)
 
 </div>
 
@@ -24,11 +25,13 @@
 
 ## 🏛️ Who we are
 
-**Etherealmber** is a software organization based in Morocco, building a single connected platform for the businesses that keep the country running: wholesalers, shops, warehouses, workshops and family companies.
+**Etherealmber** is a software organization based in Morocco, building one connected platform for the businesses that keep the country running: wholesalers, shops, warehouses, workshops and family companies.
 
-We build **one product family, not a pile of disconnected tools**. Atlas Commerce is the operational core — stock, checkout, invoicing, purchasing, staff. Everything else we ship connects to it: the shop front reads from it, the Android app moves with it, support sits on top of it. Same data, same rules, one place to look.
+We ship **one product family, not a pile of disconnected tools**. Atlas Commerce is the operational core — stock, checkout, invoicing, purchasing, staff. Everything else connects to it: the native Android app moves with it, the Rust desktop client mirrors it, and the shop front we are building now reads directly from it.
 
 No opaque SaaS subscriptions, no dedicated servers, no locked-in vendor. Every deployment lives in the client's own Cloudflare account, and the business owns the database, the backups and the code.
+
+<sub>📊 All numbers and progress figures below are measured from the repositories themselves (commits, releases, merged PRs, documented roadmap) — not marketing copy. Re-measured **November 2026**.</sub>
 
 ---
 
@@ -36,63 +39,173 @@ No opaque SaaS subscriptions, no dedicated servers, no locked-in vendor. Every d
 
 | | |
 |---|---|
-| **Retail & wholesale operations** | Multi-warehouse stock, bin locations, lots and FEFO expiry, audited movements, transfers, inventory counts, kits/BOM |
-| **Checkout & cash** | Fast POS with VR receipts, multi-method payments, refunds and cash drawer balance |
-| **Invoicing & receivables** | VAT invoices, due dates, credit notes, status pipeline, CSV exports, Partner API and event webhooks |
+| **Retail & wholesale operations** | Multi-warehouse stock, bin locations, lots + FEFO expiry, thresholds, audited movements, rolling inventory, transfers, kits/BOM |
+| **Checkout & cash** | Fast POS with VR receipts, multi-method payments, refunds, cash drawer balance |
+| **Invoicing & receivables** | VAT invoices, due dates, credit notes, status pipeline + journal, CSV exports, Partner API v1, event webhooks |
 | **Purchasing & suppliers** | Bills, receipts, supplier references and price breaks |
-| **People & money** | Employees, payroll basics, cash balance, expenses, reports |
+| **People & money** | Clients (ICE, credit limits), vendors, employees, cash balance, expenses, finance reports |
 | **Scan & OCR** | Native barcode scanning, photo-driven product requests, invoice and quote OCR |
-| **AI assistance** | An agent that pre-fills client and product sheets — explicit confirmation before anything executes |
-| **Security** | Password + OTP, WebAuthn / passkeys, 60-second single-use QR login, role-based access, audit log |
-| **Field work** | Offline-first Android app with roles for owner, admin, stock and terrain |
+| **AI assistance** | Atlas Agent — grounded on live stock, sales and balances, with per-action permissions and confirmation |
+| **Security** | Password + OTP, WebAuthn / passkeys, 60-second single-use QR pairing, device fingerprint binding, role-based access, audit log |
+| **Field & desktop** | Native Kotlin app for Android 9+, Rust desktop client for Windows / macOS / Linux |
 
 ---
 
-## 🚧 What we're building
+## 📦 Repositories
 
-We are actively building **Atlas Shop** — the online storefront of the family — and connecting it to every project we run.
+| Repository | What it is | Version | State |
+|---|---|---|---|
+| [**atlas-commerce**](https://github.com/Etherealmber/atlas-commerce) | ERP / POS / invoicing core — Cloudflare Workers + D1 + R2 + React | `0.8.0-beta` | ![commits](https://img.shields.io/badge/409%20commits-159%20PRs-2ea44f?style=flat-square) |
+| [**atlas-commerce-android**](https://github.com/Etherealmber/atlas-commerce-android) | Native Android companion — Kotlin + Jetpack Compose, Android 9+ | [![v1.5.1](https://img.shields.io/github/v/release/Etherealmber/atlas-commerce-android?style=flat-square)](https://github.com/Etherealmber/atlas-commerce-android/releases) | ![46 releases](https://img.shields.io/badge/46%20releases-shipped-2ea44f?style=flat-square) |
+| [**atlas-commerce-desktop**](https://github.com/Etherealmber/atlas-commerce-desktop) | Native desktop client — Rust + egui, no browser engine, no telemetry | [![v0.1.7](https://img.shields.io/github/v/release/Etherealmber/atlas-commerce-desktop?style=flat-square)](https://github.com/Etherealmber/atlas-commerce-desktop/releases) | ![8 releases](https://img.shields.io/badge/8%20releases-early-fbca04?style=flat-square) |
+| [**afmarbre-main**](https://github.com/Etherealmber/afmarbre-main) | Client platform for A-F Marbre — catalogue, quotes, private CMS admin on Workers | `—` | ![5 commits](https://img.shields.io/badge/5%20commits-client%20deploy-9e9e9e?style=flat-square) |
+| [**\.github**](https://github.com/Etherealmber/.github) | Organization profile and brand assets (this page) | `—` | ![profile](https://img.shields.io/badge/profile-live-2ea44f?style=flat-square) |
 
-- 🛍️ **Atlas Shop** — a shop that talks directly to **Atlas Commerce**. It fetches products, prices, stock availability and images from the ERP, so the catalogue you keep in the back office is the catalogue customers see. No second database to keep in sync.
-- 🔗 **One connection layer** — the same Partner API and webhook backbone that Atlas Commerce already exposes (scoped keys, idempotent writes, `stock.*` / `doc.*` events) becomes the shared link across the whole suite: Commerce → Shop → Android → Support.
-- 📱 **Atlas Commerce for Android** — the field companion maturing into the daily driver: scanning, receipts, transfers, inventory, alerts.
-- 🎫 **A support page is coming** — a public entry point for help, requests and status, connected to the same customer records instead of being a separate inbox.
-- 🧩 **One complete, enhanced system** — instead of separate products that happen to share a logo, a single platform where a sale in the shop, a movement in the warehouse and a ticket in support all describe the same business.
-
----
-
-## 🗺️ Roadmap
-
-| Target | Milestone |
-|---|---|
-| **End of 2026** | ✅ **Atlas Commerce** finished — the ERP / POS / invoicing core, production-ready |
-| **End of 2026** | ✅ **Atlas Commerce for Android** finished — the field app shipped and stable |
-| **During 2027** | 🛍️ **Atlas Shop** connected to Atlas Commerce — live catalogue, stock and prices read from the ERP |
-| **During 2027** | 🎫 **Support page** launched, wired to the same customer and order data |
-| **Before the end of 2027** | 🚀 **The complete, enhanced system** — every project unified into one platform |
-
-Dates are targets, not promises — but they are the dates the work is being planned around.
+![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?style=flat-square&logo=typescript&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-7f52ff?style=flat-square&logo=kotlin&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white)
+![Cloudflare](https://img.shields.io/badge/Cloudflare%20Workers-f38020?style=flat-square&logo=cloudflare&logoColor=white)
 
 ---
 
-## 📦 The product family
+## ✅ What is done
 
-### [Atlas Commerce](https://github.com/Etherealmber/atlas-commerce) — the core
+### Atlas Commerce — web core · `0.8.0-beta`
 
-ERP / caisse / facturation for Moroccan commerce: multi-warehouse stock, fast checkout with VR receipts, VAT invoicing with receivables and refunds, purchasing, employees and payroll, cash balance.
+<details open>
+<summary><strong>Operational core (shipping today)</strong></summary>
 
-`Cloudflare Workers` · `Hono` · `D1` · `R2` · `React + Vite` · `Capacitor` · MIT · v1.4.5-beta
+- **Stock** — multi-warehouse, bin locations, lots + FEFO expiry, thresholds, audited movements, rolling inventory, transfers, kits/BOM
+- **Point of sale** — VR receipts without VAT, multi-method payments, refunds, cash drawer balance
+- **Invoicing** — VAT invoices, receivables and due dates, credit notes, CSV export, status pipeline with journal
+- **Purchasing** — bills, receptions, supplier references, price breaks
+- **Parties** — clients with ICE and credit limits, vendors, employees
+- **Scan & OCR** — native barcode scanning, photo-driven product requests, invoice/quote OCR
+- **Atlas Agent (AI)** — grounded on live data, per-action permissions, explicit confirmation before writes
+- **Authentication** — password + OTP, WebAuthn / passkeys, 60-second single-use QR pairing, Turnstile, rate limiting
+- **Administration** — users and roles, API keys + webhooks, encrypted D1 → R2 backups, audit log, version journal
+- **Partner API v1** — scoped keys, `Idempotency-Key` writes, OpenAPI document
+- **Output** — printable labels (QR + CODE128 + price), reports, alert center
 
-### Atlas Shop — the storefront *(in progress)*
+</details>
 
-The customer-facing side, reading live data from Atlas Commerce: products, stock, prices, media. Built to sell without creating a second source of truth.
+<details>
+<summary><strong>Engineering delivery</strong></summary>
 
-### Atlas Commerce for Android — the field app *(target: end of 2026)*
+- **409 commits**, **159 merged pull requests**, **100 closed issues**
+- Full roadmap **v209 delivered — 10 / 10 workstreams** (scan-first operations, lots/FEFO, alert center, supplier parts, status pipeline, labels, kits/BOM, attachments QC, bin locations, webhooks)
+- **CI guards** — no API or front-end change merges without passing the gates
+- **GitHub automations** — automatic issue triage (FR/EN), self-repair bots, release/support sync blocks
+- Self-hosting documentation: `SETUP.md`, Android ↔ Worker contract, WebAuthn guide, finance API docs
 
-Offline-first shell with role-aware actions: scan, receive, transfer, count, invoice lookup, alert inbox — designed for a phone in a warehouse, not a desk.
+</details>
 
-### Support — the front door *(coming)*
+### Atlas Commerce — Android · `v1.5.1`
 
-Help, requests and status for every business running the suite, connected to the same records as the rest of the platform.
+<details open>
+<summary><strong>46 releases shipped</strong></summary>
+
+- Native **Kotlin + Jetpack Compose (Material 3)**, `minSdk 28` — Android 9+ including handheld scanners
+- **Strict multi-server & multi-account isolation** — `AES-256-GCM` per server, `SHA-256` scoped caches, full purge on switch
+- **Guided onboarding** — server URL → live `/api/health` probe (D1 + R2) → sign-in
+- **Sign-in** — password + OTP, one-tap email verification link, or **QR pairing from the PC**
+- **Operations** — stock, POS quick sales, receipts, invoices, barcode scanning, alert inbox
+- **Atlas Agent** — synchronized threads with the web app, live token quota bars
+- **Security** — no password stored, opt-in biometric / device-PIN unlock, camera released when leaving Scan
+- **Privacy** — crash reporting off unless explicitly opted in
+- **Extras** — monthly PDF reports with 7-day private cache, OTA APK updates, issue templates, bug-hunter workflow
+
+</details>
+
+### Atlas Commerce — desktop · `v0.1.7`
+
+<details open>
+<summary><strong>8 releases across Windows, macOS and Linux</strong></summary>
+
+- **Rust + egui (fastframe)** — no browser engine, no telemetry, `reqwest` + rustls
+- **Guided start** — splash, welcome, server choice with live `/api/health` probe, saved servers
+- **Sign-in** — password + OTP, `atlascommerce://verify` deep link, QR pairing
+- **Screens** — dashboard, products and stock movements, invoice history, quick sales with idempotency keys, Atlas Agent, notifications
+- **Desktop life** — custom title bar, tray, single instance, start-at-login, refresh interval, native notifications
+- **Security** — device fingerprint (`X-Device-Fingerprint`) bound to sessions, no password ever stored, `0600` files
+- **Updates** — GitHub Releases only, `update.json`, `checksums.txt`, Ed25519 signature, blocking mandatory updates
+
+</details>
+
+### Platform & operations
+
+- **Organization profile, brand and documentation** live in `.github`
+- **Client deployment** running for A-F Marbre (Worker + KV + D1 + R2, catalogue, quotes, CMS admin)
+- **54 public releases**, **259 merged pull requests**, **245 closed issues** across the org
+
+---
+
+## 🚧 What is not done yet
+
+Honest list — these are the open items, in the order they are being worked on.
+
+| Item | Status | Notes |
+|---|---|---|
+| **Atlas Shop** — connected storefront | ![0%](https://img.shields.io/badge/%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-0%25-9e9e9e?style=flat-square) **not started** | Plans to read products, prices, stock and media from Atlas Commerce through the Partner API + webhooks. Repository not created yet |
+| **Support portal** | ![10%](https://img.shields.io/badge/%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-10%25-fbca04?style=flat-square) **planned** | Sync hooks (`SUPPORT-SYNC`) already wired into the Atlas Commerce README; no standalone portal yet |
+| **DGI e-invoicing clearance** | ![40%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-40%25-fbca04?style=flat-square) **partial** | UBL 2.1 output and legal mentions exist locally; real-time clearance waits on the official API (mandate 2026–2028) |
+| **Attendance module** | ![20%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-20%25-fbca04?style=flat-square) **backend only** | Settings flag and data model in place, UI not delivered |
+| **Android ↔ Worker 0.8 agent parity** | ![60%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91-60%25-fbca04?style=flat-square) **in progress** | SSE contract (`token`, `tool`, `done`, `error`) documented; Android-side integration still to ship |
+| **Payroll bulletin & CSV export** | ![35%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-35%25-fbca04?style=flat-square) **partial** | Employee records done; CNSS / AMO bulletin and export pending |
+| **Customer dunning** | ![0%](https://img.shields.io/badge/%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-0%25-9e9e9e?style=flat-square) **not started** | Reminders for unpaid invoices (email / WhatsApp link) |
+| **Accounting export (FEC-like)** | ![0%](https://img.shields.io/badge/%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-0%25-9e9e9e?style=flat-square) **not started** | Accountant-ready ledger export |
+| **Desktop feature parity** | ![55%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-55%25-fbca04?style=flat-square) **early** | v0.1.x — core screens done, remaining modules follow the web + Android |
+| **Worker monolith peel** | ![70%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91-70%25-fbca04?style=flat-square) **ongoing** | `routes/`, `repositories/`, `services/` extracted; `index.ts` still carries clusters |
+| **TypeScript baseline cleanup** | ![30%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-30%25-fbca04?style=flat-square) **ongoing** | ~310 pre-existing `tsc` errors tracked as deltas only |
+
+---
+
+## 📊 Progress overview
+
+| Product | Progress | Reading |
+|---|---|---|
+| **Atlas Commerce** (web core) | ![85%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91-85%25-2ea44f?style=flat-square) **85 %** | Feature-complete core, in beta; remaining work is hardening, payroll, DGI readiness |
+| **Atlas Commerce Android** | ![90%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91-90%25-2ea44f?style=flat-square) **90 %** | 46 releases, stable daily use; agent SSE parity outstanding |
+| **Atlas Commerce Desktop** | ![55%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-55%25-fbca04?style=flat-square) **55 %** | Core modules shipped, parity work continues |
+| **Atlas Shop** | ![0%](https://img.shields.io/badge/%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-0%25-9e9e9e?style=flat-square) **0 %** | Not started — the next major build |
+| **Support portal** | ![10%](https://img.shields.io/badge/%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-10%25-fbca04?style=flat-square) **10 %** | Planned, hooks prepared |
+| **One connected platform** | ![55%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-55%25-fbca04?style=flat-square) **55 %** | Commerce + clients live; the shared connection layer and shop complete the picture |
+
+<sub>Percentages are engineering estimates derived from shipped scope versus the documented 2026–2027 target, not billing or commercial data.</sub>
+
+---
+
+## 📈 Roadmap
+
+**Legend** — 🟢 done · 🟡 in progress · ⚪ planned
+
+```
+2026 Q4 ──┤ Atlas Commerce 1.0 · Android 2.0 · desktop hardening
+2027 Q1 ──┤ Atlas Shop v1 (catalogue) · Support portal v1
+2027 Q2 ──┤ Atlas Shop checkout · shared connection layer · desktop parity
+2027 Q3 ──┤ Unified accounts, alerts & billing across the suite · DGI readiness
+2027 Q4 ──┤ Complete, enhanced system · docs · v1.x everywhere
+```
+
+| Quarter | Milestone | Scope | Status | Progress |
+|---|---|---|---|---|
+| **Q4 2026** | **Atlas Commerce 1.0** | Close the gap to general availability: hardening, payroll bulletin, attendance UI, remove the beta tag | 🟡 in progress | ![85%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91-85%25-2ea44f?style=flat-square) |
+| **Q4 2026** | **Atlas Commerce Android 2.0** | Agent SSE parity with the web, final stability pass, store-ready release | 🟡 in progress | ![90%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91-90%25-2ea44f?style=flat-square) |
+| **Q4 2026** | **Desktop 0.2** | Reach usable parity on stock, clients and invoices | 🟡 in progress | ![55%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-55%25-fbca04?style=flat-square) |
+| **Q1 2027** | **Atlas Shop v1 — catalogue** | New repo; products, prices, stock availability and media read live from Atlas Commerce via Partner API v1 | ⚪ planned | ![0%](https://img.shields.io/badge/%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-0%25-9e9e9e?style=flat-square) |
+| **Q1 2027** | **Support portal v1** | Public help, requests and status, connected to the same customer records | ⚪ planned | ![10%](https://img.shields.io/badge/%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-10%25-fbca04?style=flat-square) |
+| **Q2 2027** | **Atlas Shop — orders & checkout** | Cart, orders, payment options, stock reservation written back to the ERP | ⚪ planned | ![0%](https://img.shields.io/badge/%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-0%25-9e9e9e?style=flat-square) |
+| **Q2 2027** | **Shared connection layer** | One contract across Commerce ↔ Shop ↔ Android ↔ Desktop ↔ Support: scoped keys, idempotency, `stock.*` / `doc.*` webhooks | 🟡 foundation done | ![45%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-45%25-fbca04?style=flat-square) |
+| **Q2 2027** | **Desktop 1.0** | Full module parity and signed auto-updates for all three platforms | ⚪ planned | ![40%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-40%25-fbca04?style=flat-square) |
+| **Q3 2027** | **Unified experience** | Single sign-on across products, one alert inbox, one customer view | ⚪ planned | ![15%](https://img.shields.io/badge/%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-15%25-9e9e9e?style=flat-square) |
+| **Q3 2027** | **DGI e-invoicing readiness** | Clearance pipeline the moment the official API opens; 10-year archive | 🟡 partial | ![40%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-40%25-fbca04?style=flat-square) |
+| **Q4 2027** | **Complete, enhanced system** | Documentation, polish, migrations, v1.x across every client — one platform | ⚪ planned | ![5%](https://img.shields.io/badge/%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-5%25-9e9e9e?style=flat-square) |
+
+**Targets, stated plainly**
+
+- ✅ **End of 2026** — Atlas Commerce and Atlas Commerce for Android finished
+- 🛍️ **During 2027** — Atlas Shop connected to Atlas Commerce, support page launched
+- 🚀 **Before the end of 2027** — the complete, enhanced system
 
 ---
 
@@ -102,15 +215,17 @@ Help, requests and status for every business running the suite, connected to the
 one system        products share data, not just branding
 edge-first        Cloudflare Workers · D1 · R2 · Durable Objects
 no lock-in        the client owns the account, the data and the deploy
-browser-first     heavy work (canvas, WebGPU, OCR) runs on the device
 private by default secrets in Wrangler, never in the repo
+native clients    Kotlin and Rust — no browser engine on phone or desktop
 French terrain    UI written for the field, in the language of the field
+verifiable work   CI guards, issue bots, signed releases
 ```
 
-- 🔒 **Ownership over convenience** — the business owns the database, the backups and the code.
-- ⚡ **Fast where it hurts** — one scan, one keypress, one ticket. No wizard that gets in the way.
-- 🧩 **Boring infrastructure** — one Worker, one SQLite database, one bucket. Fewer moving parts to break.
-- 🇲🇦 **Local reality first** — ICE/IF, VAT, VR receipts, French labels, phone-first usage.
+- 🔒 **Ownership over convenience** — the business owns the database, the backups and the code
+- ⚡ **Fast where it hurts** — one scan, one keypress, one ticket
+- 🧩 **Boring infrastructure** — one Worker, one SQLite database, one bucket
+- 🇲🇦 **Local reality first** — ICE/IF, VAT, VR receipts, French labels, phone-first usage
+- 📖 **Working in the open** — MIT where we can, READMEs that explain the system
 
 ---
 
@@ -119,16 +234,18 @@ French terrain    UI written for the field, in the language of the field
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?style=for-the-badge&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232a?style=for-the-badge&logo=react&logoColor=61dafb)
 ![Vite](https://img.shields.io/badge/Vite-646cff?style=for-the-badge&logo=vite&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-7f52ff?style=for-the-badge&logo=kotlin&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
 ![Cloudflare Workers](https://img.shields.io/badge/Workers-f38020?style=for-the-badge&logo=cloudflare&logoColor=white)
 ![SQLite](https://img.shields.io/badge/D1%20%2F%20SQLite-003b57?style=for-the-badge&logo=sqlite&logoColor=white)
-![Capacitor](https://img.shields.io/badge/Capacitor-119eff?style=for-the-badge&logo=capacitor&logoColor=white)
+![Capacitor](https://img.shields.io/badge/egui%20%2F%20Compose-119eff?style=for-the-badge&logo=capacitor&logoColor=white)
 
 ---
 
 ## 📬 Contact
 
-- 🐛 **Bugs & features** — [open an issue](https://github.com/Etherealmber/atlas-commerce/issues/new)
-- 🔐 **Security** — report privately through a GitHub security advisory; please don't disclose publicly before a fix
+- 🐛 **Bugs & features** — [issues on atlas-commerce](https://github.com/Etherealmber/atlas-commerce/issues/new) · [Android](https://github.com/Etherealmber/atlas-commerce-android/issues/new) · [Desktop](https://github.com/Etherealmber/atlas-commerce-desktop/issues/new)
+- 🔐 **Security** — private report through a GitHub security advisory; please don't disclose publicly before a fix
 - 🤝 **Work with us** — demos and deployments: reach us through GitHub
 - 🌍 **Based in** Morocco · working across the country
 
