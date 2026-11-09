@@ -1,0 +1,145 @@
+{
+  "$comment": "Single source of truth for the estimated parts of the profile. Edit a pct here and the workflow redraws the bars — never edit badges by hand. Colors are derived (>=70 green, 30-69 yellow, <30 grey). Versions and counts are fetched live by scripts/update-profile.mjs.",
+  "updated": "2026-11-10",
+  "products": [
+    {
+      "name": "Atlas Commerce (web core)",
+      "repo": "atlas-commerce",
+      "pct": 85,
+      "reading": "Feature-complete core at `{{version}}`, in beta; remaining work is hardening, payroll, DGI readiness"
+    },
+    {
+      "name": "Atlas Commerce Android",
+      "repo": "atlas-commerce-android",
+      "pct": 90,
+      "reading": "Stable daily use at `{{version}}`; Atlas Agent SSE parity outstanding"
+    },
+    {
+      "name": "Atlas Commerce Desktop",
+      "repo": "atlas-commerce-desktop",
+      "pct": 55,
+      "reading": "Core modules shipped at `{{version}}`; parity work continues"
+    },
+    {
+      "name": "Atlas Shop",
+      "repo": null,
+      "pct": 0,
+      "reading": "Not started — the next major build"
+    },
+    {
+      "name": "Support portal",
+      "repo": null,
+      "pct": 10,
+      "reading": "Planned, sync hooks prepared"
+    },
+    {
+      "name": "One connected platform",
+      "repo": null,
+      "pct": 55,
+      "reading": "Commerce + native clients live; the shared connection layer and shop complete the picture"
+    }
+  ],
+  "roadmap": [
+    {
+      "quarter": "Q4 2026",
+      "milestone": "Atlas Commerce 1.0",
+      "scope": "Close the gap to general availability: hardening, payroll bulletin, attendance UI, remove the beta tag",
+      "status": "in progress",
+      "pct": 85,
+      "repo": "atlas-commerce"
+    },
+    {
+      "quarter": "Q4 2026",
+      "milestone": "Atlas Commerce Android 2.0",
+      "scope": "Agent SSE parity with the web, final stability pass, store-ready release",
+      "status": "in progress",
+      "pct": 90,
+      "repo": "atlas-commerce-android"
+    },
+    {
+      "quarter": "Q4 2026",
+      "milestone": "Desktop 0.2",
+      "scope": "Reach usable parity on stock, clients and invoices",
+      "status": "in progress",
+      "pct": 55,
+      "repo": "atlas-commerce-desktop"
+    },
+    {
+      "quarter": "Q1 2027",
+      "milestone": "Atlas Shop v1 — catalogue",
+      "scope": "New repository; products, prices, stock availability and media read live from Atlas Commerce via Partner API v1",
+      "status": "not started",
+      "pct": 0,
+      "repo": null
+    },
+    {
+      "quarter": "Q1 2027",
+      "milestone": "Support portal v1",
+      "scope": "Public help, requests and status, connected to the same customer records",
+      "status": "planned",
+      "pct": 10,
+      "repo": null
+    },
+    {
+      "quarter": "Q2 2027",
+      "milestone": "Atlas Shop — orders & checkout",
+      "scope": "Cart, orders, payment options, stock reservation written back to the ERP",
+      "status": "planned",
+      "pct": 0,
+      "repo": null
+    },
+    {
+      "quarter": "Q2 2027",
+      "milestone": "Shared connection layer",
+      "scope": "One contract across Commerce ↔ Shop ↔ Android ↔ Desktop ↔ Support: scoped keys, idempotency, `stock.*` / `doc.*` webhooks",
+      "status": "partial",
+      "pct": 45,
+      "repo": null
+    },
+    {
+      "quarter": "Q2 2027",
+      "milestone": "Desktop 1.0",
+      "scope": "Full module parity and signed auto-updates for all three platforms",
+      "status": "planned",
+      "pct": 40,
+      "repo": "atlas-commerce-desktop"
+    },
+    {
+      "quarter": "Q3 2027",
+      "milestone": "Unified experience",
+      "scope": "Single sign-on across products, one alert inbox, one customer view",
+      "status": "planned",
+      "pct": 15,
+      "repo": null
+    },
+    {
+      "quarter": "Q3 2027",
+      "milestone": "DGI e-invoicing readiness",
+      "scope": "Clearance pipeline the moment the official API opens; 10-year archive",
+      "status": "partial",
+      "pct": 40,
+      "repo": null
+    },
+    {
+      "quarter": "Q4 2027",
+      "milestone": "Complete, enhanced system",
+      "scope": "Documentation, polish, migrations, v1.x across every client — one platform",
+      "status": "planned",
+      "pct": 5,
+      "repo": null
+    }
+  ],
+  "openItems": [
+    { "item": "Atlas Shop — connected storefront", "status": "not started", "pct": 0, "notes": "Plans to read products, prices, stock and media from Atlas Commerce through the Partner API + webhooks. Repository not created yet" },
+    { "item": "Support portal", "status": "planned", "pct": 10, "notes": "Sync hooks (`SUPPORT-SYNC`) already wired into the Atlas Commerce README; no standalone portal yet" },
+    { "item": "DGI e-invoicing clearance", "status": "partial", "pct": 40, "notes": "UBL 2.1 output and legal mentions exist locally; real-time clearance waits on the official API (mandate 2026–2028)" },
+    { "item": "Attendance module", "status": "backend only", "pct": 20, "notes": "Settings flag and data model in place, UI not delivered" },
+    { "item": "Android ↔ Worker agent parity", "status": "in progress", "pct": 60, "notes": "SSE contract (`token`, `tool`, `done`, `error`) documented; Android-side integration still to ship" },
+    { "item": "Payroll bulletin & CSV export", "status": "partial", "pct": 35, "notes": "Employee records done; CNSS / AMO bulletin and export pending" },
+    { "item": "Customer dunning", "status": "not started", "pct": 0, "notes": "Reminders for unpaid invoices (email / WhatsApp link)" },
+    { "item": "Accounting export (FEC-like)", "status": "not started", "pct": 0, "notes": "Accountant-ready ledger export" },
+    { "item": "Desktop feature parity", "status": "early", "pct": 55, "notes": "Core screens done, remaining modules follow the web + Android" },
+    { "item": "Worker monolith peel", "status": "ongoing", "pct": 70, "notes": "`routes/`, `repositories/`, `services/` extracted; `index.ts` still carries clusters" },
+    { "item": "TypeScript baseline cleanup", "status": "ongoing", "pct": 30, "notes": "~310 pre-existing `tsc` errors tracked as deltas only" }
+  ]
+}
