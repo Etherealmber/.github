@@ -19,7 +19,7 @@
 ![license](https://img.shields.io/badge/license-MIT-3da639?style=flat-square)
 ![based in](https://img.shields.io/badge/based%20in-Morocco-c1272d?style=flat-square)
 
-<sub>🔄 Auto-refreshed from the GitHub API — last update **2026-11-09**. No manual edits needed.</sub>
+<sub>🔄 Auto-refreshed from the GitHub API — last update **2026-11-09**.</sub>
 <!-- STATS:END -->
 
 [What we do](#-what-we-do) · [Repositories](#-repositories) · [Done](#-what-is-done) · [Not done yet](#-what-is-not-done-yet) · [Roadmap](#-roadmap) · [Contact](#-contact)
