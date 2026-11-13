@@ -12,14 +12,14 @@
 
 <!-- STATS:START -->
 ![repositories](https://img.shields.io/badge/repositories-5-24292f?style=flat-square&logo=github&logoColor=white)
-![commits](https://img.shields.io/badge/commits-1185-24292f?style=flat-square)
-![merged PRs](https://img.shields.io/badge/merged%20PRs-265-2ea44f?style=flat-square)
-![releases](https://img.shields.io/badge/releases-61-2ea44f?style=flat-square)
+![commits](https://img.shields.io/badge/commits-1197-24292f?style=flat-square)
+![merged PRs](https://img.shields.io/badge/merged%20PRs-269-2ea44f?style=flat-square)
+![releases](https://img.shields.io/badge/releases-62-2ea44f?style=flat-square)
 ![closed issues](https://img.shields.io/badge/closed%20issues-55-24292f?style=flat-square)
 ![license](https://img.shields.io/badge/license-MIT-3da639?style=flat-square)
 ![based in](https://img.shields.io/badge/based%20in-Morocco-c1272d?style=flat-square)
 
-<sub>🔄 Auto-refreshed from the GitHub API — last update **2026-11-12**. No manual edits needed.</sub>
+<sub>🔄 Auto-refreshed from the GitHub API — last update **2026-11-13**. No manual edits needed.</sub>
 <!-- STATS:END -->
 
 [What we do](#-what-we-do) · [Repositories](#-repositories) · [Done](#-what-is-done) · [Not done yet](#-what-is-not-done-yet) · [Roadmap](#-roadmap) · [Contact](#-contact)
@@ -61,11 +61,11 @@ No opaque SaaS subscriptions, no dedicated servers, no locked-in vendor. Every d
 <!-- REPOS:START -->
 | Repository | What it is | Version | Delivery |
 |---|---|---|---|
-| [**atlas-commerce**](https://github.com/Etherealmber/atlas-commerce) | ERP / POS / invoicing core — Cloudflare Workers, D1, R2, React | ![0.8.1-beta](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FEtherealmber%2Fatlas-commerce%2Fmain%2Fpackage.json&query=%24.version&label=version&style=flat-square&color=8250df) | ![416 commits](https://img.shields.io/badge/416%20commits-161%20PRs-2ea44f?style=flat-square) |
-| [**atlas-commerce-android**](https://github.com/Etherealmber/atlas-commerce-android) | Native Android companion — Kotlin + Jetpack Compose, Android 9+ | [![1.5.9](https://img.shields.io/badge/v1.5.9-1.5.9%20latest-2ea44f?style=flat-square)](https://github.com/Etherealmber/atlas-commerce-android/releases) | ![367 commits](https://img.shields.io/badge/367%20commits-73%20PRs-2ea44f?style=flat-square) ![releases](https://img.shields.io/badge/releases-49-2ea44f?style=flat-square) |
+| [**atlas-commerce**](https://github.com/Etherealmber/atlas-commerce) | ERP / POS / invoicing core — Cloudflare Workers, D1, R2, React | ![0.8.5-beta](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FEtherealmber%2Fatlas-commerce%2Fmain%2Fpackage.json&query=%24.version&label=version&style=flat-square&color=8250df) | ![423 commits](https://img.shields.io/badge/423%20commits-164%20PRs-2ea44f?style=flat-square) |
+| [**atlas-commerce-android**](https://github.com/Etherealmber/atlas-commerce-android) | Native Android companion — Kotlin + Jetpack Compose, Android 9+ | [![1.6.0](https://img.shields.io/badge/v1.6.0-1.6.0%20latest-2ea44f?style=flat-square)](https://github.com/Etherealmber/atlas-commerce-android/releases) | ![371 commits](https://img.shields.io/badge/371%20commits-74%20PRs-2ea44f?style=flat-square) ![releases](https://img.shields.io/badge/releases-50-2ea44f?style=flat-square) |
 | [**atlas-commerce-desktop**](https://github.com/Etherealmber/atlas-commerce-desktop) | Native desktop client — Rust + egui, Windows / macOS / Linux | [![0.2.1](https://img.shields.io/badge/v0.2.1-0.2.1%20latest-2ea44f?style=flat-square)](https://github.com/Etherealmber/atlas-commerce-desktop/releases) | ![382 commits](https://img.shields.io/badge/382%20commits-26%20PRs-2ea44f?style=flat-square) ![releases](https://img.shields.io/badge/releases-12-2ea44f?style=flat-square) |
 | [**afmarbre-main**](https://github.com/Etherealmber/afmarbre-main) | Client platform — catalogue, quotes, CMS admin on Workers | `—` | ![5 commits](https://img.shields.io/badge/5%20commits-0%20PRs-2ea44f?style=flat-square) |
-| [**\.github**](https://github.com/Etherealmber/.github) | Organization profile and brand assets (this page) | `—` | ![15 commits](https://img.shields.io/badge/15%20commits-5%20PRs-2ea44f?style=flat-square) ![profile](https://img.shields.io/badge/profile-live-2ea44f?style=flat-square) |
+| [**\.github**](https://github.com/Etherealmber/.github) | Organization profile and brand assets (this page) | `—` | ![16 commits](https://img.shields.io/badge/16%20commits-5%20PRs-2ea44f?style=flat-square) ![profile](https://img.shields.io/badge/profile-live-2ea44f?style=flat-square) |
 <!-- REPOS:END -->
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?style=flat-square&logo=typescript&logoColor=white)
@@ -77,7 +77,7 @@ No opaque SaaS subscriptions, no dedicated servers, no locked-in vendor. Every d
 
 ## ✅ What is done
 
-### Atlas Commerce — web core · <!--VER:atlas-commerce-->`0.8.1-beta`<!--/VER-->
+### Atlas Commerce — web core · <!--VER:atlas-commerce-->`0.8.5-beta`<!--/VER-->
 
 <details open>
 <summary><strong>Operational core (shipping today)</strong></summary>
@@ -106,7 +106,7 @@ No opaque SaaS subscriptions, no dedicated servers, no locked-in vendor. Every d
 
 </details>
 
-### Atlas Commerce — Android · <!--VER:atlas-commerce-android-->`1.5.9`<!--/VER-->
+### Atlas Commerce — Android · <!--VER:atlas-commerce-android-->`1.6.0`<!--/VER-->
 
 <details open>
 <summary><strong>Native companion, shipping continuously</strong></summary>
@@ -173,8 +173,8 @@ Honest list — these are the open items, in the order they are being worked on.
 <!-- PROGRESS:START -->
 | Product | Progress | Reading |
 |---|---|---|
-| **Atlas Commerce (web core)** | ![85%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91-85%25-2ea44f?style=flat-square) **85 %** | Feature-complete core at `0.8.1-beta`, in beta; remaining work is hardening, payroll, DGI readiness |
-| **Atlas Commerce Android** | ![90%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91-90%25-2ea44f?style=flat-square) **90 %** | Stable daily use at `1.5.9`; Atlas Agent SSE parity outstanding |
+| **Atlas Commerce (web core)** | ![85%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91-85%25-2ea44f?style=flat-square) **85 %** | Feature-complete core at `0.8.5-beta`, in beta; remaining work is hardening, payroll, DGI readiness |
+| **Atlas Commerce Android** | ![90%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91-90%25-2ea44f?style=flat-square) **90 %** | Stable daily use at `1.6.0`; Atlas Agent SSE parity outstanding |
 | **Atlas Commerce Desktop** | ![55%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91-55%25-fbca04?style=flat-square) **55 %** | Core modules shipped at `0.2.1`; parity work continues |
 | **Atlas Shop** | ![0%](https://img.shields.io/badge/%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-0%25-9e9e9e?style=flat-square) **0 %** | Not started — the next major build |
 | **Support portal** | ![10%](https://img.shields.io/badge/%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-10%25-9e9e9e?style=flat-square) **10 %** | Planned, sync hooks prepared |
@@ -200,8 +200,8 @@ Honest list — these are the open items, in the order they are being worked on.
 <!-- ROADMAP:START -->
 | Quarter | Milestone | Scope | Status | Progress |
 |---|---|---|---|---|
-| **Q4 2026** | **Atlas Commerce 1.0** | Close the gap to general availability: hardening, payroll bulletin, attendance UI, remove the beta tag _(live: `0.8.1-beta`)_ | 🟡 in progress | ![85%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91-85%25-2ea44f?style=flat-square) |
-| **Q4 2026** | **Atlas Commerce Android 2.0** | Agent SSE parity with the web, final stability pass, store-ready release _(live: `1.5.9`)_ | 🟡 in progress | ![90%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91-90%25-2ea44f?style=flat-square) |
+| **Q4 2026** | **Atlas Commerce 1.0** | Close the gap to general availability: hardening, payroll bulletin, attendance UI, remove the beta tag _(live: `0.8.5-beta`)_ | 🟡 in progress | ![85%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91-85%25-2ea44f?style=flat-square) |
+| **Q4 2026** | **Atlas Commerce Android 2.0** | Agent SSE parity with the web, final stability pass, store-ready release _(live: `1.6.0`)_ | 🟡 in progress | ![90%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91-90%25-2ea44f?style=flat-square) |
 | **Q4 2026** | **Desktop 0.2** | Reach usable parity on stock, clients and invoices _(live: `0.2.1`)_ | 🟡 in progress | ![55%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91-55%25-fbca04?style=flat-square) |
 | **Q1 2027** | **Atlas Shop v1 — catalogue** | New repository; products, prices, stock availability and media read live from Atlas Commerce via Partner API v1 | ⚪ not started | ![0%](https://img.shields.io/badge/%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-0%25-9e9e9e?style=flat-square) |
 | **Q1 2027** | **Support portal v1** | Public help, requests and status, connected to the same customer records | ⚪ planned | ![10%](https://img.shields.io/badge/%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-10%25-9e9e9e?style=flat-square) |
