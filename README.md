@@ -24,10 +24,13 @@ Nothing on the profile is typed by hand twice. Every day at **03:17 UTC** — an
 |---|---|---|
 | Version of each product | latest GitHub release, or `package.json` for repos without releases | automatically |
 | Commits, merged PRs, releases, closed issues | GitHub API | automatically |
+| Latest releases feed (tag, date, highlights) | GitHub Releases API | automatically |
 | Progress bars (products, open items, roadmap) | [`profile/progress.json`](profile/progress.json) | when you edit the JSON |
 | Everything else | `profile/README.md` | when you edit the file |
 
-The blocks are delimited by markers — `<!-- STATS:START -->`, `<!-- REPOS:START -->`, `<!-- OPEN:START -->`, `<!-- PROGRESS:START -->`, `<!-- ROADMAP:START -->`, and inline `<!--VER:slug-->` — so text outside them is safe to edit freely.
+The blocks are delimited by markers — `<!-- STATS:START -->`, `<!-- REPOS:START -->`, `<!-- RELEASES:START -->`, `<!-- OPEN:START -->`, `<!-- PROGRESS:START -->`, `<!-- ROADMAP:START -->`, and inline `<!--VER:slug-->` — so text outside them is safe to edit freely.
+
+Release highlights are sanitised before rendering (PR links, `by @user in …`, sizes and checksums are stripped), so commit attribution from other accounts never leaks into the profile.
 
 ### Moving a progress bar
 
