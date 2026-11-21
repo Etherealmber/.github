@@ -56,28 +56,6 @@ No opaque SaaS subscriptions, no dedicated servers, no locked-in vendor. Every d
 
 ---
 
-## 📸 A look at Atlas Commerce
-
-| Dashboard — dark | Dashboard — light |
-|---|---|
-| ![Dashboard dark](https://raw.githubusercontent.com/Etherealmber/atlas-commerce/main/public/shots/dashboard-dark.png) | ![Dashboard light](https://raw.githubusercontent.com/Etherealmber/atlas-commerce/main/public/shots/dashboard-light.png) |
-
-| Quick sale | Products |
-|---|---|
-| ![Quick sale](https://raw.githubusercontent.com/Etherealmber/atlas-commerce/main/public/shots/pc-quicksale-dark.png) | ![Products](https://raw.githubusercontent.com/Etherealmber/atlas-commerce/main/public/shots/pc-products-dark.png) |
-
-| Invoices | Balance |
-|---|---|
-| ![Invoices](https://raw.githubusercontent.com/Etherealmber/atlas-commerce/main/public/shots/pc-invoices-dark.png) | ![Balance](https://raw.githubusercontent.com/Etherealmber/atlas-commerce/main/public/shots/pc-balance-dark.png) |
-
-| Atlas Agent | On the phone |
-|---|---|
-| ![Atlas Agent](https://raw.githubusercontent.com/Etherealmber/atlas-commerce/main/public/shots/pc-agent-dark.png) | ![Phone dashboard](https://raw.githubusercontent.com/Etherealmber/atlas-commerce/main/public/shots/phone-dashboard-dark.png) |
-
-<sub>Real captures generated from the application itself — dark and light, desktop and phone.</sub>
-
----
-
 ## 📦 Products
 
 ### 🧾 Atlas Commerce — web core · <!--VER:atlas-commerce-->`0.9.0-beta`<!--/VER-->
