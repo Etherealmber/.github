@@ -131,9 +131,21 @@ async function commitCount(slug) {
   return Array.isArray(body) ? body.length : null;
 }
 
-async function latestRelease(slug) {
+async function latestReleaseInfo(slug) {
   const rel = await json(`/repos/${ORG}/${slug}/releases/latest`);
-  return rel && rel.tag_name ? rel.tag_name.replace(/^v/, '') : null;
+  if (!rel || !rel.tag_name) return null;
+  return {
+    tag: rel.tag_name,
+    name: rel.name || rel.tag_name,
+    publishedAt: rel.published_at || rel.created_at,
+    url: rel.html_url,
+    body: rel.body || '',
+  };
+}
+
+async function latestRelease(slug) {
+  const info = await latestReleaseInfo(slug);
+  return info ? info.tag.replace(/^v/, '') : null;
 }
 
 async function releasesCount(slug) {
@@ -156,7 +168,7 @@ async function collect() {
   const out = {};
   for (const repo of REPOS) {
     const { slug, versionFrom } = repo;
-    const stat = { commits: null, mergedPRs: null, releases: null, closedIssues: null, version: null };
+    const stat = { commits: null, mergedPRs: null, releases: null, closedIssues: null, version: null, latest: null };
 
     stat.commits = await commitCount(slug);
     if (repo.track) {
@@ -167,8 +179,12 @@ async function collect() {
       stat.releases = await releasesCount(slug);
     }
 
-    if (versionFrom === 'release') stat.version = await latestRelease(slug);
-    else if (versionFrom === 'package') stat.version = await packageVersion(slug);
+    if (versionFrom === 'release') {
+      stat.latest = await latestReleaseInfo(slug);
+      stat.version = stat.latest ? stat.latest.tag.replace(/^v/, '') : null;
+    } else if (versionFrom === 'package') {
+      stat.version = await packageVersion(slug);
+    }
 
     out[slug] = stat;
     console.log(
@@ -269,7 +285,7 @@ function renderStats(stats) {
 function renderRepos(stats) {
   const rows = REPOS.map((repo) => {
     const s = stats[repo.slug];
-    const bits = [plainBadge(`${fmt(s.commits)} commits`, `${fmt(s.mergedPRs)} PRs`, '2ea44f')];
+    const bits = [plainBadge(`${fmt(s.commits)} commits`, `${fmt(s.mergedPRs)} PRs`, (s.mergedPRs || 0) > 0 ? '2ea44f' : '9e9e9e')];
     if ((s.releases || 0) > 0) {
       bits.push(plainBadge('releases', fmt(s.releases), '2ea44f'));
     } else if (repo.slug === '.github') {
@@ -301,6 +317,32 @@ function renderProgress(progress, stats) {
   });
 
   return ['| Product | Progress | Reading |', '|---|---|---|', ...rows].join('\n');
+}
+
+function renderReleases(stats) {
+  const rows = REPOS.filter((r) => stats[r.slug].latest).map((repo) => {
+    const rel = stats[repo.slug].latest;
+    const date = rel.publishedAt ? new Date(rel.publishedAt).toISOString().slice(0, 10) : '—';
+    const SKIP = /^(#|bump workspace|\*\*(version|taille|size|sha|t[ée]l[ée]chargement|miroir|assets?|checksums?)|full changelog|what'?s changed)/i;
+    const notes = rel.body
+      .split('\n')
+      .map((l) =>
+        l
+          .replace(/^[-*]\s*/, '') // bullet
+          .replace(/\s+by\s+@[\w-]+\s+in\s+https?:\/\/\S+/gi, '') // "by @user in <PR url>"
+          .replace(/\(https?:\/\/\S+\)/g, '') // markdown links
+          .replace(/https?:\/\/\S+/g, '') // bare urls
+          .replace(/`/g, '')
+          .replace(/\s{2,}/g, ' ')
+          .trim(),
+      )
+      .filter((l) => l && !SKIP.test(l))
+      .map((l) => (l.length > 110 ? `${l.slice(0, 107)}…` : l));
+    const first = notes.slice(0, 2).join(' · ') || '—';
+    return `| [**${repo.slug}**](https://github.com/${ORG}/${repo.slug}/releases) | [\`${rel.tag}\`](${rel.url}) | ${date} | ${first} |`;
+  });
+
+  return ['| Product | Latest | Published | Highlights |', '|---|---|---|---|', ...rows].join('\n');
 }
 
 function renderOpenItems(progress) {
@@ -356,6 +398,7 @@ const before = readme;
 
 readme = replaceBlock(readme, 'STATS', renderStats(stats));
 readme = replaceBlock(readme, 'REPOS', renderRepos(stats));
+readme = replaceBlock(readme, 'RELEASES', renderReleases(stats));
 readme = replaceBlock(readme, 'OPEN', renderOpenItems(progress));
 readme = replaceBlock(readme, 'PROGRESS', renderProgress(progress, stats));
 readme = replaceBlock(readme, 'ROADMAP', renderRoadmap(progress));
