@@ -22,7 +22,7 @@
 <sub>🔄 Auto-refreshed from the GitHub API — last update **2026-11-21**. No manual edits needed.</sub>
 <!-- STATS:END -->
 
-[What we do](#-what-we-do) · [Products](#-products) · [Repositories](#-repositories) · [Latest releases](#-latest-releases) · [Not done yet](#-what-is-not-done-yet) · [Roadmap](#-roadmap) · [Contact](#-contact)
+[What we do](#-what-we-do) · [Products](#-products) · [Repositories](#%EF%B8%8F-repositories) · [Latest releases](#-latest-releases) · [Not done yet](#-what-is-not-done-yet) · [Roadmap](#-roadmap) · [Contact](#-contact)
 
 </div>
 
@@ -139,7 +139,7 @@ Help, requests and status connected to the same customer and order records as th
 
 ---
 
-## 📦 Repositories
+## 🗂️ Repositories
 
 <!-- REPOS:START -->
 | Repository | What it is | Version | Delivery |
