@@ -12,14 +12,14 @@
 
 <!-- STATS:START -->
 ![repositories](https://img.shields.io/badge/repositories-5-24292f?style=flat-square&logo=github&logoColor=white)
-![commits](https://img.shields.io/badge/commits-1488-24292f?style=flat-square)
-![merged PRs](https://img.shields.io/badge/merged%20PRs-321-2ea44f?style=flat-square)
+![commits](https://img.shields.io/badge/commits-1555-24292f?style=flat-square)
+![merged PRs](https://img.shields.io/badge/merged%20PRs-336-2ea44f?style=flat-square)
 ![releases](https://img.shields.io/badge/releases-8-2ea44f?style=flat-square)
 ![closed issues](https://img.shields.io/badge/closed%20issues-66-24292f?style=flat-square)
 ![license](https://img.shields.io/badge/license-MIT-3da639?style=flat-square)
 ![based in](https://img.shields.io/badge/based%20in-Morocco-c1272d?style=flat-square)
 
-<sub>🔄 Auto-refreshed from the GitHub API — last update **2026-11-22**. No manual edits needed.</sub>
+<sub>🔄 Auto-refreshed from the GitHub API — last update **2026-11-23**. No manual edits needed.</sub>
 <!-- STATS:END -->
 
 [What we do](#-what-we-do) · [Products](#-products) · [Repositories](#%EF%B8%8F-repositories) · [Latest releases](#-latest-releases) · [Not done yet](#-what-is-not-done-yet) · [Roadmap](#-roadmap) · [Contact](#-contact)
@@ -144,11 +144,11 @@ Help, requests and status connected to the same customer and order records as th
 <!-- REPOS:START -->
 | Repository | What it is | Version | Delivery |
 |---|---|---|---|
-| [**atlas-commerce**](https://github.com/Etherealmber/atlas-commerce) | ERP / POS / invoicing core — Cloudflare Workers, D1, R2, React | ![0.9.1-beta](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FEtherealmber%2Fatlas-commerce%2Fmain%2Fpackage.json&query=%24.version&label=version&style=flat-square&color=8250df) | ![483 commits](https://img.shields.io/badge/483%20commits-186%20PRs-2ea44f?style=flat-square) |
-| [**atlas-commerce-android**](https://github.com/Etherealmber/atlas-commerce-android) | Native Android companion — Kotlin + Jetpack Compose, Android 9+ | [![1.8.1](https://img.shields.io/badge/v1.8.1-1.8.1%20latest-2ea44f?style=flat-square)](https://github.com/Etherealmber/atlas-commerce-android/releases) | ![515 commits](https://img.shields.io/badge/515%20commits-97%20PRs-2ea44f?style=flat-square) ![releases](https://img.shields.io/badge/releases-8-2ea44f?style=flat-square) |
+| [**atlas-commerce**](https://github.com/Etherealmber/atlas-commerce) | ERP / POS / invoicing core — Cloudflare Workers, D1, R2, React | ![0.9.1-beta](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FEtherealmber%2Fatlas-commerce%2Fmain%2Fpackage.json&query=%24.version&label=version&style=flat-square&color=8250df) | ![516 commits](https://img.shields.io/badge/516%20commits-194%20PRs-2ea44f?style=flat-square) |
+| [**atlas-commerce-android**](https://github.com/Etherealmber/atlas-commerce-android) | Native Android companion — Kotlin + Jetpack Compose, Android 9+ | [![1.8.1](https://img.shields.io/badge/v1.8.1-1.8.1%20latest-2ea44f?style=flat-square)](https://github.com/Etherealmber/atlas-commerce-android/releases) | ![547 commits](https://img.shields.io/badge/547%20commits-104%20PRs-2ea44f?style=flat-square) ![releases](https://img.shields.io/badge/releases-8-2ea44f?style=flat-square) |
 | [**atlas-commerce-desktop**](https://github.com/Etherealmber/atlas-commerce-desktop) | Native desktop client — Rust + egui, Windows / macOS / Linux | `—` | ![454 commits](https://img.shields.io/badge/454%20commits-32%20PRs-2ea44f?style=flat-square) |
 | [**afmarbre-main**](https://github.com/Etherealmber/afmarbre-main) | Client platform — catalogue, quotes, CMS admin on Workers | `—` | ![5 commits](https://img.shields.io/badge/5%20commits-0%20PRs-9e9e9e?style=flat-square) |
-| [**\.github**](https://github.com/Etherealmber/.github) | Organization profile and brand assets (this page) | `—` | ![31 commits](https://img.shields.io/badge/31%20commits-6%20PRs-2ea44f?style=flat-square) ![profile](https://img.shields.io/badge/profile-live-2ea44f?style=flat-square) |
+| [**\.github**](https://github.com/Etherealmber/.github) | Organization profile and brand assets (this page) | `—` | ![33 commits](https://img.shields.io/badge/33%20commits-6%20PRs-2ea44f?style=flat-square) ![profile](https://img.shields.io/badge/profile-live-2ea44f?style=flat-square) |
 <!-- REPOS:END -->
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?style=flat-square&logo=typescript&logoColor=white)
@@ -163,7 +163,7 @@ Help, requests and status connected to the same customer and order records as th
 <!-- RELEASES:START -->
 | Product | Latest | Published | Highlights |
 |---|---|---|---|
-| [**atlas-commerce-android**](https://github.com/Etherealmber/atlas-commerce-android/releases) | [`v1.8.1`](https://github.com/Etherealmber/atlas-commerce-android/releases/tag/v1.8.1) | 2026-11-22 | Fix floating header compile and Snake scrolling (["6d8fd7b"] · Fix floating header scrolling across pages (["4efdb3c"] |
+| [**atlas-commerce-android**](https://github.com/Etherealmber/atlas-commerce-android/releases) | [`v1.8.1`](https://github.com/Etherealmber/atlas-commerce-android/releases/tag/v1.8.1) | 2026-11-23 | Polish sales dock and QR device pairing (["b0d3ee4"] · Improve employee and client directory workflows (["965fbc4"] |
 <!-- RELEASES:END -->
 
 <sub>Pulled from GitHub Releases on every refresh — the table is generated, not written.</sub>
@@ -226,7 +226,7 @@ Honest list — these are the open items, in the order they are being worked on.
 |---|---|---|---|---|
 | **Q4 2026** | **Atlas Commerce 1.0** | Close the gap to general availability: hardening, payroll bulletin, attendance UI, remove the beta tag _(live: `0.9.1-beta`)_ | 🟡 in progress | ![88%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91-88%25-2ea44f?style=flat-square) |
 | **Q4 2026** | **Atlas Commerce Android 2.0** | Agent SSE parity with the web, final stability pass, store-ready release _(live: `1.8.1`)_ | 🟡 in progress | ![93%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91-93%25-2ea44f?style=flat-square) |
-| **Q4 2026** | **Desktop 1.0** | Native reports, client forms, QR approval and stock history shipped; continue to full parity _(live: `—`)_ | 🟡 in progress | ![70%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91-70%25-2ea44f?style=flat-square) |
+| **Q4 2026** | **Desktop 0.3 → 1.0** | Native reports, client forms, QR approval and stock history shipped; continue to full parity _(live: `—`)_ | 🟡 in progress | ![70%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91-70%25-2ea44f?style=flat-square) |
 | **Q1 2027** | **Atlas Shop v1 — catalogue** | New repository; products, prices, stock availability and media read live from Atlas Commerce via Partner API v1 | ⚪ not started | ![0%](https://img.shields.io/badge/%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-0%25-9e9e9e?style=flat-square) |
 | **Q1 2027** | **Support portal v1** | Public help, requests and status, connected to the same customer records | ⚪ planned | ![10%](https://img.shields.io/badge/%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-10%25-9e9e9e?style=flat-square) |
 | **Q2 2027** | **Atlas Shop — orders & checkout** | Cart, orders, payment options, stock reservation written back to the ERP | ⚪ planned | ![0%](https://img.shields.io/badge/%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-0%25-9e9e9e?style=flat-square) |
