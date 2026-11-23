@@ -49,7 +49,9 @@ const REPOS = [
   {
     slug: 'atlas-commerce-desktop',
     what: 'Native desktop client — Rust + egui, Windows / macOS / Linux',
-    versionFrom: 'release',
+    // Releases are published in bursts; when none exist we fall back to the
+    // Cargo workspace version so the table never goes blank.
+    versionFrom: 'cargo',
     track: true,
   },
   {
@@ -153,6 +155,34 @@ async function releasesCount(slug) {
   return Array.isArray(list) ? list.length : 0;
 }
 
+/**
+ * The web app ships its human-facing version in src/version.ts and
+ * package.json is often bumped later (or not at all), so read the source of
+ * truth: APP_VERSION first, then DISPLAY_VERSION, then package.json.
+ */
+const SOURCE_VERSION_FILES = [
+  ['src/version.ts', /APP_VERSION\s*=\s*['"]([^'"]+)['"]/],
+  ['src/version.ts', /DISPLAY_VERSION\s*=\s*['"]([^'"]+)['"]/],
+  ['src/version.ts', /WHATS_NEW_VERSION\s*=\s*['"]([^'"]+)['"]/],
+];
+
+async function sourceVersion(slug) {
+  for (const [file, re] of SOURCE_VERSION_FILES) {
+    const body = await json(`/repos/${ORG}/${slug}/contents/${file}`);
+    if (body && body.content) {
+      const match = Buffer.from(body.content, 'base64').toString('utf8').match(re);
+      if (match) return match[1];
+    }
+  }
+  const pkg = await json(`/repos/${ORG}/${slug}/contents/package.json`);
+  if (pkg && pkg.content) {
+    try {
+      return JSON.parse(Buffer.from(pkg.content, 'base64').toString('utf8')).version || null;
+    } catch { /* ignore */ }
+  }
+  return null;
+}
+
 async function packageVersion(slug) {
   const file = await json(`/repos/${ORG}/${slug}/contents/package.json`);
   if (!file || !file.content) return null;
@@ -183,7 +213,15 @@ async function collect() {
       stat.latest = await latestReleaseInfo(slug);
       stat.version = stat.latest ? stat.latest.tag.replace(/^v/, '') : null;
     } else if (versionFrom === 'package') {
-      stat.version = await packageVersion(slug);
+      stat.version = (await sourceVersion(slug)) || (await packageVersion(slug));
+    } else if (versionFrom === 'cargo') {
+      const cargo = await json(`/repos/${ORG}/${slug}/contents/Cargo.toml`);
+      if (cargo && cargo.content) {
+        const text = Buffer.from(cargo.content, 'base64').toString('utf8');
+        const ws = text.match(/\[workspace\.package\][\s\S]{0,200}?version\s*=\s*"([^"]+)"/);
+        const any = ws || text.match(/^version\s*=\s*"([^"]+)"/m);
+        if (any) stat.version = any[1];
+      }
     }
 
     out[slug] = stat;
@@ -252,8 +290,12 @@ function versionBadge(repo, stats) {
     return `[![${v}](https://img.shields.io/badge/v${encodeURIComponent(v)}-${encodeURIComponent(v)}%20latest-2ea44f?style=flat-square)](https://github.com/${ORG}/${slug}/releases)`;
   }
 
-  const raw = `https%3A%2F%2Fraw.githubusercontent.com%2F${ORG}%2F${slug}%2Fmain%2Fpackage.json`;
-  return `![${v}](https://img.shields.io/badge/dynamic/json?url=${raw}&query=%24.version&label=version&style=flat-square&color=8250df)`;
+  // The badge must read the same file the version came from, otherwise it
+  // disagrees with the heading (package.json lags behind src/version.ts).
+  const file = versionFrom === 'cargo' ? 'Cargo.toml' : 'src/version.ts';
+  const label = versionFrom === 'cargo' ? 'version' : 'app%20version';
+  const raw = `https%3A%2F%2Fraw.githubusercontent.com%2F${ORG}%2F${slug}%2Fmain%2F${file}`;
+  return `![${v}](https://img.shields.io/badge/version-${encodeURIComponent(v)}-8250df?style=flat-square)`;
 }
 
 function renderStats(stats) {
