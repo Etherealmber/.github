@@ -5,8 +5,8 @@
     {
       "name": "Atlas Commerce (web core)",
       "repo": "atlas-commerce",
-      "pct": 88,
-      "reading": "Feature-complete core at `{{version}}`; remaining work is hardening, payroll, DGI readiness"
+      "pct": 90,
+      "reading": "Running `{{version}}`; remaining work is hardening, payroll bulletin, DGI clearance"
     },
     {
       "name": "Atlas Commerce Android",
@@ -17,8 +17,8 @@
     {
       "name": "Atlas Commerce Desktop",
       "repo": "atlas-commerce-desktop",
-      "pct": 70,
-      "reading": "Native client at `{{version}}` — reports, client forms and QR approval shipped; parity continues"
+      "pct": 40,
+      "reading": "Native client on hold at `{{version}}` — **blocked on the login issue**, fixes resume right after it"
     },
     {
       "name": "Atlas Shop",
@@ -45,7 +45,7 @@
       "milestone": "Atlas Commerce 1.0",
       "scope": "Close the gap to general availability: hardening, payroll bulletin, attendance UI, remove the beta tag",
       "status": "in progress",
-      "pct": 88,
+      "pct": 90,
       "repo": "atlas-commerce"
     },
     {
@@ -58,10 +58,10 @@
     },
     {
       "quarter": "Q4 2026",
-      "milestone": "Desktop 0.3 → 1.0",
-      "scope": "Native reports, client forms, QR approval and stock history shipped; continue to full parity",
-      "status": "in progress",
-      "pct": 70,
+      "milestone": "Desktop — resume after login fix",
+      "scope": "Paused: the desktop client is not being extended until the login issue is fixed on web; then parity work continues",
+      "status": "blocked",
+      "pct": 40,
       "repo": "atlas-commerce-desktop"
     },
     {
@@ -101,7 +101,7 @@
       "milestone": "Desktop 1.0",
       "scope": "Full module parity and signed auto-updates for all three platforms",
       "status": "planned",
-      "pct": 60,
+      "pct": 40,
       "repo": "atlas-commerce-desktop"
     },
     {
@@ -179,10 +179,10 @@
       "notes": "Accountant-ready ledger export"
     },
     {
-      "item": "Desktop feature parity",
-      "status": "early",
-      "pct": 70,
-      "notes": "Reports, client forms, native QR approval and stock-movement history shipped; remaining modules follow the web"
+      "item": "Desktop app — paused on the login issue",
+      "status": "blocked",
+      "pct": 40,
+      "notes": "Native client is on hold: the login issue is being fixed first, then parity work resumes"
     },
     {
       "item": "Worker monolith peel",
