@@ -10,7 +10,8 @@ The **organization profile repository** for [Etherealmber](https://github.com/Et
 ├── scripts/
 │   └── update-profile.mjs
 └── .github/workflows/
-    └── profile.yml      ← runs the generator
+    ├── profile.yml         ← runs the generator
+    └── branch-cleanup.yml  ← deletes unused branches
 ```
 
 > GitHub only renders `profile/README.md` on the organization profile.
@@ -54,6 +55,18 @@ Add no dependencies — the script uses `fetch` and Node 20+ only.
 ### Repository list
 
 The repositories table is generated from the `REPOS` array at the top of `scripts/update-profile.mjs`. When a new repo is created (Atlas Shop, the support portal…), add one entry there and it appears on the profile with live stats.
+
+## Branch cleanup
+
+[`branch-cleanup.yml`](.github/workflows/branch-cleanup.yml) keeps the branch list tidy, using the same policy as `atlas-commerce`:
+
+- **On PR close** — the head branch is deleted if the PR was merged, or if it is fully contained in `main`
+- **Weekly, Mondays 05:00 UTC** — sweeps every branch that is fully merged into `main` and has no open PR, including leftover `arena/*` session branches
+- **Never touched** — `main`, any branch with an open PR, any protected branch, and any unmerged work. Nothing is force-deleted, rebased or rewritten.
+
+Run it by hand from **Actions → Branch cleanup → Run workflow**, with `dry_run` checked to see what it would delete without deleting anything.
+
+---
 
 ## Repositories
 
