@@ -42,13 +42,13 @@ const REPOS = [
   },
   {
     slug: 'atlas-commerce-android',
-    what: 'Native Android companion — Kotlin + Jetpack Compose, Android 9+',
+    what: 'Native Android companion — Kotlin + Jetpack Compose, Android 11+',
     versionFrom: 'release',
     track: true,
   },
   {
     slug: 'atlas-commerce-desktop',
-    what: 'Native desktop client — Rust + egui, Windows / macOS / Linux',
+    what: 'Native desktop client — Rust + egui, Windows 10/11 (Linux and macOS stated)',
     // Releases are published in bursts; when none exist we fall back to the
     // Cargo workspace version so the table never goes blank.
     versionFrom: 'cargo',
@@ -234,19 +234,22 @@ async function collect() {
 
 /* ------------------------------------------------------------------ render -- */
 
+// Solid block for the filled part, dark shade for the remainder. Both render on
+// GitHub's light and dark themes, unlike the light-shade glyph which turns into
+// a pale sliver on dark backgrounds.
 const BLOCK = '\u2588';
-const LIGHT = '\u2591';
+const DARK = '\u2593';
 
 function bar(pct) {
   const filled = Math.max(0, Math.min(10, Math.round(Number(pct) / 10)));
-  return BLOCK.repeat(filled) + LIGHT.repeat(10 - filled);
+  return BLOCK.repeat(filled) + DARK.repeat(10 - filled);
 }
 
 function accent(pct) {
   const n = Number(pct);
   if (n >= 70) return '2ea44f'; // green
   if (n >= 30) return 'fbca04'; // yellow
-  return '9e9e9e'; // grey
+  return '6e7681'; // dark-theme grey
 }
 
 function barBadge(pct) {
