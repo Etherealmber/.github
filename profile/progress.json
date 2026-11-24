@@ -1,24 +1,24 @@
 {
   "$comment": "Single source of truth for the estimated parts of the profile. Edit a pct here and the workflow redraws the bars — never edit badges by hand. Colors are derived (>=70 green, 30-69 yellow, <30 grey). Versions and counts are fetched live by scripts/update-profile.mjs.",
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "products": [
     {
       "name": "Atlas Commerce (web core)",
       "repo": "atlas-commerce",
       "pct": 92,
-      "reading": "`{{version}}` pre-1.0 blockers closed: DGI routes mounted, dunning fixed, a blank database now provisions itself, and CI guards it. DGI clearance still runs on the stub adapter until the official platform opens"
+      "reading": "`{{version}}` pre-1.0 blockers closed on main; `src/` and `worker/` both type-check at **0 errors** and the guards hold them there. DGI clearance still runs on the stub adapter until the official platform opens"
     },
     {
       "name": "Atlas Commerce Android",
       "repo": "atlas-commerce-android",
-      "pct": 95,
-      "reading": "`{{version}}` — queue replay, retry policy and receipt guards now covered by contract tests in CI; 404/429 handling, account scoping and totals verified"
+      "pct": 96,
+      "reading": "`{{version}}` — Android 11+ (`minSdk 30`); queue replay, retry policy and receipt guards covered by 18 contract tests in CI, printer permission guard added for Android 12+"
     },
     {
       "name": "Atlas Commerce Desktop",
       "repo": "atlas-commerce-desktop",
       "pct": 40,
-      "reading": "On hold at `{{version}}` — paused until the login issue is fixed"
+      "reading": "On hold at `0.3.2` — paused until the login issue is fixed. Windows 10/11 supported; Linux and macOS are stated, not yet shipped"
     },
     {
       "name": "Atlas Shop",
@@ -35,7 +35,7 @@
     {
       "name": "One connected platform",
       "repo": null,
-      "pct": 64,
+      "pct": 65,
       "reading": "Commerce, Android and the offline contract are live; Shop and the Support portal are the missing halves of the platform"
     },
     {
@@ -57,15 +57,15 @@
     {
       "quarter": "Q4 2026",
       "milestone": "Atlas Commerce Android 2.0",
-      "scope": "Queue and receipt contract tests green in CI (#131); remaining polish is the held-write exit and splitting conflicts from rejected writes",
+      "scope": "Contract tests, conflict/rejected split and held-write exit merged (#131); one polish pass left, then the 2.0 release",
       "status": "in progress",
-      "pct": 95,
+      "pct": 96,
       "repo": "atlas-commerce-android"
     },
     {
       "quarter": "Q4 2026",
       "milestone": "Desktop — resume after login fix",
-      "scope": "Paused: the desktop client is not being extended until the login issue is fixed on web; then parity work continues",
+      "scope": "Paused: not extended until the login issue is fixed on web. Windows 10/11 is the supported target; Linux and macOS are stated but not shipped",
       "status": "blocked",
       "pct": 40,
       "repo": "atlas-commerce-desktop"
@@ -105,7 +105,7 @@
     {
       "quarter": "Q2 2027",
       "milestone": "Desktop 1.0",
-      "scope": "Full module parity and signed auto-updates for all three platforms",
+      "scope": "Full module parity and signed auto-updates. Windows 10/11 first; Linux and macOS follow",
       "status": "planned",
       "pct": 40,
       "repo": "atlas-commerce-desktop"
@@ -168,9 +168,9 @@
     },
     {
       "item": "TypeScript baseline cleanup",
-      "status": "ongoing",
-      "pct": 30,
-      "notes": "~310 pre-existing `tsc` errors tracked as deltas only"
+      "status": "done",
+      "pct": 100,
+      "notes": "`src=0` and `worker=0` in `scripts/tsc-baseline.txt` — the guard now enforces zero, not a delta"
     },
     {
       "item": "Atlas Bot + Discord server",
