@@ -5,14 +5,14 @@
     {
       "name": "Atlas Commerce (web core)",
       "repo": "atlas-commerce",
-      "pct": 88,
-      "reading": "`{{version}}` — payroll, attendance, cash shifts, FEC and the offline contract verified live; DGI routes unmounted and dunning returning 500 block 1.0"
+      "pct": 92,
+      "reading": "`{{version}}` pre-1.0 blockers closed: DGI routes mounted, dunning fixed, a blank database now provisions itself, and CI guards it. DGI clearance still runs on the stub adapter until the official platform opens"
     },
     {
       "name": "Atlas Commerce Android",
       "repo": "atlas-commerce-android",
-      "pct": 92,
-      "reading": "`{{version}}` — printing and offline queue merged and CI-green; queue/account-switch tests and a few retry-policy fixes outstanding"
+      "pct": 95,
+      "reading": "`{{version}}` — queue replay, retry policy and receipt guards now covered by contract tests in CI; 404/429 handling, account scoping and totals verified"
     },
     {
       "name": "Atlas Commerce Desktop",
@@ -35,7 +35,7 @@
     {
       "name": "One connected platform",
       "repo": null,
-      "pct": 60,
+      "pct": 64,
       "reading": "Commerce, Android and the offline contract are live; Shop and the Support portal are the missing halves of the platform"
     },
     {
@@ -49,17 +49,17 @@
     {
       "quarter": "Q4 2026",
       "milestone": "Atlas Commerce 1.0",
-      "scope": "Mount the DGI routes, fix the dunning 500, make fresh-D1 migrations work, align the payroll role gate",
+      "scope": "Blocker sweep done on main (#215, #216): DGI mounted, dunning fixed, blank-D1 migrations green in CI, payroll gate aligned. Remaining: DGI live submission once the official platform opens",
       "status": "in progress",
-      "pct": 88,
+      "pct": 92,
       "repo": "atlas-commerce"
     },
     {
       "quarter": "Q4 2026",
       "milestone": "Atlas Commerce Android 2.0",
-      "scope": "CI is green; add fake-HTTP queue tests, make 404/429 terminal, scope the queue by location, then release 2.0",
+      "scope": "Queue and receipt contract tests green in CI (#131); remaining polish is the held-write exit and splitting conflicts from rejected writes",
       "status": "in progress",
-      "pct": 92,
+      "pct": 95,
       "repo": "atlas-commerce-android"
     },
     {
@@ -99,7 +99,7 @@
       "milestone": "Shared connection layer",
       "scope": "Idempotent offline-operations contract live across web and Android; extend to Shop and Support",
       "status": "in progress",
-      "pct": 75,
+      "pct": 82,
       "repo": null
     },
     {
@@ -121,9 +121,9 @@
     {
       "quarter": "Q3 2027",
       "milestone": "DGI e-invoicing readiness",
-      "scope": "Adapter, state machine and archive are written but the routes are unmounted and the adapter is stub-only",
+      "scope": "Adapter, state machine, archive and RBAC are live and tested; submissions still go through the stub until the official DGI platform publishes its API",
       "status": "partial",
-      "pct": 55,
+      "pct": 62,
       "repo": null
     },
     {
@@ -136,18 +136,6 @@
     }
   ],
   "openItems": [
-    {
-      "item": "Dunning endpoint returns 500",
-      "status": "blocked",
-      "pct": 80,
-      "notes": "GET /api/dunning/invoices/:id selects i.invoice_number; the column is `number`"
-    },
-    {
-      "item": "Fresh-D1 migrations fail",
-      "status": "blocked",
-      "pct": 20,
-      "notes": "migrations 0002-0012 depend on tables only created at runtime; a new deployment cannot provision itself"
-    },
     {
       "item": "Atlas Shop — connected storefront",
       "status": "not started",
@@ -163,8 +151,8 @@
     {
       "item": "DGI e-invoicing clearance",
       "status": "partial",
-      "pct": 55,
-      "notes": "Routes written but registerDgiRoutes is never called (404 live); stub adapter only, no role check on GET"
+      "pct": 62,
+      "notes": "Routes mounted and RBAC tested (#215); adapter remains stub-only until DGI_BASE_URL/credentials exist and the official CIUS is published"
     },
     {
       "item": "Desktop app — paused on the login issue",
