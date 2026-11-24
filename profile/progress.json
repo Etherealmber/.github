@@ -1,24 +1,24 @@
 {
   "$comment": "Single source of truth for the estimated parts of the profile. Edit a pct here and the workflow redraws the bars — never edit badges by hand. Colors are derived (>=70 green, 30-69 yellow, <30 grey). Versions and counts are fetched live by scripts/update-profile.mjs.",
-  "updated": "2026-11-21",
+  "updated": "2026-11-24",
   "products": [
     {
       "name": "Atlas Commerce (web core)",
       "repo": "atlas-commerce",
-      "pct": 90,
-      "reading": "Running `{{version}}`; remaining work is hardening, payroll bulletin, DGI clearance"
+      "pct": 93,
+      "reading": "Running `{{version}}`; offline inventory contract, payroll, attendance, cash shifts, FEC, dunning and DGI layer all landed — remaining is hardening and DGI go-live"
     },
     {
       "name": "Atlas Commerce Android",
       "repo": "atlas-commerce-android",
-      "pct": 93,
-      "reading": "Mature release channel at `{{version}}`; Atlas Agent SSE parity outstanding"
+      "pct": 95,
+      "reading": "`{{version}}` — ESC/POS printing and the durable offline queue shipped; agent SSE parity closed"
     },
     {
       "name": "Atlas Commerce Desktop",
       "repo": "atlas-commerce-desktop",
       "pct": 40,
-      "reading": "Native client on hold at `{{version}}` — **blocked on the login issue**, fixes resume right after it"
+      "reading": "On hold at `{{version}}` — paused until the login issue is fixed"
     },
     {
       "name": "Atlas Shop",
@@ -29,31 +29,37 @@
     {
       "name": "Support portal",
       "repo": null,
-      "pct": 10,
-      "reading": "Planned, sync hooks prepared"
+      "pct": 45,
+      "reading": "Public `/support` page shipped (Turnstile); standalone portal still to come"
     },
     {
       "name": "One connected platform",
       "repo": null,
-      "pct": 58,
+      "pct": 68,
       "reading": "Commerce + native clients live; the shared connection layer and shop complete the picture"
+    },
+    {
+      "name": "Atlas Bot + Discord",
+      "repo": null,
+      "pct": 0,
+      "reading": "Coming soon — Discord bot and community server"
     }
   ],
   "roadmap": [
     {
       "quarter": "Q4 2026",
       "milestone": "Atlas Commerce 1.0",
-      "scope": "Close the gap to general availability: hardening, payroll bulletin, attendance UI, remove the beta tag",
+      "scope": "Hardening, DGI go-live when credentials exist, remove the beta tag",
       "status": "in progress",
-      "pct": 90,
+      "pct": 93,
       "repo": "atlas-commerce"
     },
     {
       "quarter": "Q4 2026",
       "milestone": "Atlas Commerce Android 2.0",
-      "scope": "Agent SSE parity with the web, final stability pass, store-ready release",
+      "scope": "Printing and offline queue shipped; final stability pass and store-ready release",
       "status": "in progress",
-      "pct": 93,
+      "pct": 95,
       "repo": "atlas-commerce-android"
     },
     {
@@ -75,9 +81,9 @@
     {
       "quarter": "Q1 2027",
       "milestone": "Support portal v1",
-      "scope": "Public help, requests and status, connected to the same customer records",
-      "status": "planned",
-      "pct": 10,
+      "scope": "Public /support page with Turnstile is live; standalone portal, status and ticket history next",
+      "status": "in progress",
+      "pct": 45,
       "repo": null
     },
     {
@@ -91,9 +97,9 @@
     {
       "quarter": "Q2 2027",
       "milestone": "Shared connection layer",
-      "scope": "One contract across Commerce ↔ Shop ↔ Android ↔ Desktop ↔ Support: scoped keys, idempotency, `stock.*` / `doc.*` webhooks",
-      "status": "partial",
-      "pct": 50,
+      "scope": "Idempotent offline-operations contract live across web and Android; extend to Shop and Support",
+      "status": "in progress",
+      "pct": 75,
       "repo": null
     },
     {
@@ -115,9 +121,9 @@
     {
       "quarter": "Q3 2027",
       "milestone": "DGI e-invoicing readiness",
-      "scope": "Clearance pipeline the moment the official API opens; 10-year archive",
+      "scope": "Clearance route, state machine and stub adapter shipped; live submission waits on official DGI API and credentials",
       "status": "partial",
-      "pct": 40,
+      "pct": 70,
       "repo": null
     },
     {
@@ -145,44 +151,14 @@
     {
       "item": "DGI e-invoicing clearance",
       "status": "partial",
-      "pct": 40,
-      "notes": "UBL 2.1 output and legal mentions exist locally; real-time clearance waits on the official API (mandate 2026–2028)"
-    },
-    {
-      "item": "Attendance module",
-      "status": "backend only",
-      "pct": 20,
-      "notes": "Settings flag and data model in place, UI not delivered"
-    },
-    {
-      "item": "Android ↔ Worker agent parity",
-      "status": "in progress",
-      "pct": 75,
-      "notes": "SSE contract (`token`, `tool`, `done`, `error`) documented; Android-side integration still to ship"
-    },
-    {
-      "item": "Payroll bulletin & CSV export",
-      "status": "partial",
-      "pct": 35,
-      "notes": "Employee records done; CNSS / AMO bulletin and export pending"
-    },
-    {
-      "item": "Customer dunning",
-      "status": "not started",
-      "pct": 0,
-      "notes": "Reminders for unpaid invoices (email / WhatsApp link)"
-    },
-    {
-      "item": "Accounting export (FEC-like)",
-      "status": "not started",
-      "pct": 0,
-      "notes": "Accountant-ready ledger export"
+      "pct": 70,
+      "notes": "Clearance route, state machine, R2 sealed-XML storage and stub adapter shipped; live submission waits on the official DGI API and credentials"
     },
     {
       "item": "Desktop app — paused on the login issue",
       "status": "blocked",
       "pct": 40,
-      "notes": "Native client is on hold: the login issue is being fixed first, then parity work resumes"
+      "notes": "On hold: the login issue is fixed first, then parity work resumes"
     },
     {
       "item": "Worker monolith peel",
@@ -195,6 +171,18 @@
       "status": "ongoing",
       "pct": 30,
       "notes": "~310 pre-existing `tsc` errors tracked as deltas only"
+    },
+    {
+      "item": "Atlas Bot + Discord server",
+      "status": "not started",
+      "pct": 0,
+      "notes": "Coming soon — Atlas bot for Discord and a community server"
+    },
+    {
+      "item": "Atlas Shop integration",
+      "status": "not started",
+      "pct": 0,
+      "notes": "Storefront reading products, stock and prices from Atlas Commerce via the Partner API"
     }
   ]
 }
