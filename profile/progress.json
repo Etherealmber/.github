@@ -18,7 +18,7 @@
       "name": "Atlas Commerce Desktop",
       "repo": "atlas-commerce-desktop",
       "pct": 40,
-      "reading": "On hold at `0.3.2` — paused until the login issue is fixed. Windows 10/11 supported; Linux and macOS are stated, not yet shipped"
+      "reading": "On hold at `0.3.2` — paused until the login issue is fixed. Builds for Windows, Linux and macOS; packages are unsigned on purpose until there is a public release"
     },
     {
       "name": "Atlas Shop",
@@ -65,7 +65,7 @@
     {
       "quarter": "Q4 2026",
       "milestone": "Desktop — resume after login fix",
-      "scope": "Paused: not extended until the login issue is fixed on web. Windows 10/11 is the supported target; Linux and macOS are stated but not shipped",
+      "scope": "Paused: not extended until the login issue is fixed on web. Windows, Linux and macOS all build in CI; packages stay unsigned until a public release is planned",
       "status": "blocked",
       "pct": 40,
       "repo": "atlas-commerce-desktop"
@@ -105,7 +105,7 @@
     {
       "quarter": "Q2 2027",
       "milestone": "Desktop 1.0",
-      "scope": "Full module parity and signed auto-updates. Windows 10/11 first; Linux and macOS follow",
+      "scope": "Full module parity and signed auto-updates. Signing comes with the first public release, not before",
       "status": "planned",
       "pct": 40,
       "repo": "atlas-commerce-desktop"
@@ -158,7 +158,7 @@
       "item": "Desktop app — paused on the login issue",
       "status": "blocked",
       "pct": 40,
-      "notes": "On hold: the login issue is fixed first, then parity work resumes"
+      "notes": "On hold: the login issue is fixed first, then parity work resumes. Builds exist for Windows 10/11, Linux and macOS; unsigned by design, no public release yet"
     },
     {
       "item": "Worker monolith peel",
