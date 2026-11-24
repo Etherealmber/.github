@@ -29,14 +29,14 @@
     {
       "name": "Support portal",
       "repo": null,
-      "pct": 45,
-      "reading": "Public `/support` page shipped (Turnstile); standalone portal still to come"
+      "pct": 10,
+      "reading": "**Not the in-app `/support` page.** A separate help platform: knowledge base, ticket submission and history, status page — reading the same customer records as Atlas Commerce. Only the `SUPPORT-SYNC` hooks and the in-app contact page exist so far"
     },
     {
       "name": "One connected platform",
       "repo": null,
-      "pct": 68,
-      "reading": "Commerce + native clients live; the shared connection layer and shop complete the picture"
+      "pct": 62,
+      "reading": "Commerce, Android and the offline contract are live; Shop and the Support portal are the missing halves of the platform"
     },
     {
       "name": "Atlas Bot + Discord",
@@ -80,10 +80,10 @@
     },
     {
       "quarter": "Q1 2027",
-      "milestone": "Support portal v1",
-      "scope": "Public /support page with Turnstile is live; standalone portal, status and ticket history next",
-      "status": "in progress",
-      "pct": 45,
+      "milestone": "Support portal v1 (help platform)",
+      "scope": "A separate help portal — not the in-app contact page: knowledge base, ticket submission and history, status page, and tickets linked to real customer and order records",
+      "status": "planned",
+      "pct": 10,
       "repo": null
     },
     {
@@ -146,7 +146,7 @@
       "item": "Support portal",
       "status": "planned",
       "pct": 10,
-      "notes": "Sync hooks (`SUPPORT-SYNC`) already wired into the Atlas Commerce README; no standalone portal yet"
+      "notes": "A separate help platform (knowledge base, tickets, status), not the in-app `/support` contact page. Only the `SUPPORT-SYNC` hooks exist so far"
     },
     {
       "item": "DGI e-invoicing clearance",

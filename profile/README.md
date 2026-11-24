@@ -135,9 +135,9 @@ Native Rust + egui (fastframe) client for Windows, macOS and Linux — no browse
 
 The customer-facing storefront, reading products, stock, prices and media straight from Atlas Commerce through Partner API v1 and webhooks. No second database to keep in sync.
 
-### 🎫 Support — *planned*
+### 🎫 Support portal — *planned*
 
-Help, requests and status connected to the same customer and order records as the rest of the platform.
+**Not the in-app `/support` page** — that one is a contact form inside Atlas Commerce. This is a **separate help platform**: knowledge base, ticket submission and history, status page, and tickets linked to real customer and order records so an agent opening a ticket sees the merchant's actual stock, invoices and devices. Nothing built yet beyond the `SUPPORT-SYNC` hooks.
 
 ---
 
@@ -180,7 +180,7 @@ Honest list — these are the open items, in the order they are being worked on.
 | Item | Status | Notes |
 |---|---|---|
 | **Atlas Shop — connected storefront** | ![0%](https://img.shields.io/badge/%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-0%25-9e9e9e?style=flat-square) ⚪ not started | Plans to read products, prices, stock and media from Atlas Commerce through the Partner API + webhooks. Repository not created yet |
-| **Support portal** | ![10%](https://img.shields.io/badge/%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-10%25-9e9e9e?style=flat-square) ⚪ planned | Sync hooks (`SUPPORT-SYNC`) already wired into the Atlas Commerce README; no standalone portal yet |
+| **Support portal** | ![10%](https://img.shields.io/badge/%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-10%25-9e9e9e?style=flat-square) ⚪ planned | A separate help platform (knowledge base, tickets, status), not the in-app `/support` contact page. Only the `SUPPORT-SYNC` hooks exist so far |
 | **DGI e-invoicing clearance** | ![70%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91-70%25-2ea44f?style=flat-square) 🟡 partial | Clearance route, state machine, R2 sealed-XML storage and stub adapter shipped; live submission waits on the official DGI API and credentials |
 | **Desktop app — paused on the login issue** | ![40%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-40%25-fbca04?style=flat-square) ⚪ blocked | On hold: the login issue is fixed first, then parity work resumes |
 | **Worker monolith peel** | ![75%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91-75%25-2ea44f?style=flat-square) 🟡 ongoing | `routes/`, `repositories/`, `services/` extracted; `index.ts` still carries clusters |
@@ -200,8 +200,8 @@ Honest list — these are the open items, in the order they are being worked on.
 | **Atlas Commerce Android** | ![95%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88-95%25-2ea44f?style=flat-square) **95 %** | `1.8.2` — ESC/POS printing and the durable offline queue shipped; agent SSE parity closed |
 | **Atlas Commerce Desktop** | ![40%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-40%25-fbca04?style=flat-square) **40 %** | On hold at `0.3.2` — paused until the login issue is fixed |
 | **Atlas Shop** | ![0%](https://img.shields.io/badge/%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-0%25-9e9e9e?style=flat-square) **0 %** | Not started — the next major build |
-| **Support portal** | ![45%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-45%25-fbca04?style=flat-square) **45 %** | Public `/support` page shipped (Turnstile); standalone portal still to come |
-| **One connected platform** | ![68%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91-68%25-fbca04?style=flat-square) **68 %** | Commerce + native clients live; the shared connection layer and shop complete the picture |
+| **Support portal** | ![10%](https://img.shields.io/badge/%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-10%25-9e9e9e?style=flat-square) **10 %** | **Not the in-app `/support` page.** A separate help platform: knowledge base, ticket submission and history, status page — reading the same customer records as Atlas Commerce. Only the `SUPPORT-SYNC` hooks and the in-app contact page exist so far |
+| **One connected platform** | ![62%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91-62%25-fbca04?style=flat-square) **62 %** | Commerce, Android and the offline contract are live; Shop and the Support portal are the missing halves of the platform |
 | **Atlas Bot + Discord** | ![0%](https://img.shields.io/badge/%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-0%25-9e9e9e?style=flat-square) **0 %** | Coming soon — Discord bot and community server |
 <!-- PROGRESS:END -->
 
@@ -251,7 +251,7 @@ A **Discord server** for Etherealmber is on the way, with an **Atlas bot** to go
 | **Q4 2026** | **Atlas Commerce Android 2.0** | Printing and offline queue shipped; final stability pass and store-ready release _(live: `1.8.2`)_ | 🟡 in progress | ![95%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88-95%25-2ea44f?style=flat-square) |
 | **Q4 2026** | **Desktop — resume after login fix** | Paused: the desktop client is not being extended until the login issue is fixed on web; then parity work continues _(live: `0.3.2`)_ | ⚪ blocked | ![40%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-40%25-fbca04?style=flat-square) |
 | **Q1 2027** | **Atlas Shop v1 — catalogue** | New repository; products, prices, stock availability and media read live from Atlas Commerce via Partner API v1 | ⚪ not started | ![0%](https://img.shields.io/badge/%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-0%25-9e9e9e?style=flat-square) |
-| **Q1 2027** | **Support portal v1** | Public /support page with Turnstile is live; standalone portal, status and ticket history next | 🟡 in progress | ![45%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-45%25-fbca04?style=flat-square) |
+| **Q1 2027** | **Support portal v1 (help platform)** | A separate help portal — not the in-app contact page: knowledge base, ticket submission and history, status page, and tickets linked to real customer and order records | ⚪ planned | ![10%](https://img.shields.io/badge/%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-10%25-9e9e9e?style=flat-square) |
 | **Q2 2027** | **Atlas Shop — orders & checkout** | Cart, orders, payment options, stock reservation written back to the ERP | ⚪ planned | ![0%](https://img.shields.io/badge/%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-0%25-9e9e9e?style=flat-square) |
 | **Q2 2027** | **Shared connection layer** | Idempotent offline-operations contract live across web and Android; extend to Shop and Support | 🟡 in progress | ![75%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91-75%25-2ea44f?style=flat-square) |
 | **Q2 2027** | **Desktop 1.0** | Full module parity and signed auto-updates for all three platforms _(live: `0.3.2`)_ | ⚪ planned | ![40%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-40%25-fbca04?style=flat-square) |
