@@ -179,9 +179,11 @@ Honest list — these are the open items, in the order they are being worked on.
 <!-- OPEN:START -->
 | Item | Status | Notes |
 |---|---|---|
+| **Dunning endpoint returns 500** | ![80%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91-80%25-2ea44f?style=flat-square) ⚪ blocked | GET /api/dunning/invoices/:id selects i.invoice_number; the column is `number` |
+| **Fresh-D1 migrations fail** | ![20%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-20%25-9e9e9e?style=flat-square) ⚪ blocked | migrations 0002-0012 depend on tables only created at runtime; a new deployment cannot provision itself |
 | **Atlas Shop — connected storefront** | ![0%](https://img.shields.io/badge/%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-0%25-9e9e9e?style=flat-square) ⚪ not started | Plans to read products, prices, stock and media from Atlas Commerce through the Partner API + webhooks. Repository not created yet |
 | **Support portal** | ![10%](https://img.shields.io/badge/%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-10%25-9e9e9e?style=flat-square) ⚪ planned | A separate help platform (knowledge base, tickets, status), not the in-app `/support` contact page. Only the `SUPPORT-SYNC` hooks exist so far |
-| **DGI e-invoicing clearance** | ![70%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91-70%25-2ea44f?style=flat-square) 🟡 partial | Clearance route, state machine, R2 sealed-XML storage and stub adapter shipped; live submission waits on the official DGI API and credentials |
+| **DGI e-invoicing clearance** | ![55%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91-55%25-fbca04?style=flat-square) 🟡 partial | Routes written but registerDgiRoutes is never called (404 live); stub adapter only, no role check on GET |
 | **Desktop app — paused on the login issue** | ![40%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-40%25-fbca04?style=flat-square) ⚪ blocked | On hold: the login issue is fixed first, then parity work resumes |
 | **Worker monolith peel** | ![75%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91-75%25-2ea44f?style=flat-square) 🟡 ongoing | `routes/`, `repositories/`, `services/` extracted; `index.ts` still carries clusters |
 | **TypeScript baseline cleanup** | ![30%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-30%25-fbca04?style=flat-square) 🟡 ongoing | ~310 pre-existing `tsc` errors tracked as deltas only |
@@ -196,12 +198,12 @@ Honest list — these are the open items, in the order they are being worked on.
 <!-- PROGRESS:START -->
 | Product | Progress | Reading |
 |---|---|---|
-| **Atlas Commerce (web core)** | ![93%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91-93%25-2ea44f?style=flat-square) **93 %** | Running `0.9.2-beta`; offline inventory contract, payroll, attendance, cash shifts, FEC, dunning and DGI layer all landed — remaining is hardening and DGI go-live |
-| **Atlas Commerce Android** | ![95%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88-95%25-2ea44f?style=flat-square) **95 %** | `1.8.2` — ESC/POS printing and the durable offline queue shipped; agent SSE parity closed |
+| **Atlas Commerce (web core)** | ![88%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91-88%25-2ea44f?style=flat-square) **88 %** | `0.9.2-beta` — payroll, attendance, cash shifts, FEC and the offline contract verified live; DGI routes unmounted and dunning returning 500 block 1.0 |
+| **Atlas Commerce Android** | ![92%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91-92%25-2ea44f?style=flat-square) **92 %** | `1.8.2` — printing and offline queue merged and CI-green; queue/account-switch tests and a few retry-policy fixes outstanding |
 | **Atlas Commerce Desktop** | ![40%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-40%25-fbca04?style=flat-square) **40 %** | On hold at `0.3.2` — paused until the login issue is fixed |
 | **Atlas Shop** | ![0%](https://img.shields.io/badge/%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-0%25-9e9e9e?style=flat-square) **0 %** | Not started — the next major build |
 | **Support portal** | ![10%](https://img.shields.io/badge/%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-10%25-9e9e9e?style=flat-square) **10 %** | **Not the in-app `/support` page.** A separate help platform: knowledge base, ticket submission and history, status page — reading the same customer records as Atlas Commerce. Only the `SUPPORT-SYNC` hooks and the in-app contact page exist so far |
-| **One connected platform** | ![62%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91-62%25-fbca04?style=flat-square) **62 %** | Commerce, Android and the offline contract are live; Shop and the Support portal are the missing halves of the platform |
+| **One connected platform** | ![60%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91-60%25-fbca04?style=flat-square) **60 %** | Commerce, Android and the offline contract are live; Shop and the Support portal are the missing halves of the platform |
 | **Atlas Bot + Discord** | ![0%](https://img.shields.io/badge/%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-0%25-9e9e9e?style=flat-square) **0 %** | Coming soon — Discord bot and community server |
 <!-- PROGRESS:END -->
 
@@ -215,6 +217,17 @@ A working ERP is not a compliant one. These are the market-specific gaps that re
 
 | Area | Requirement | State |
 |---|---|---|
+| **DGI e-invoicing** | UBL 2.1 with `ICE`, `IF`, `RC`, legal mentions, 10-year archive | 🔴 Code exists but the routes are **unmounted** (`registerDgiRoutes` never called → every `/api/invoices/:id/dgi*` returns 404); adapter is stub-only |
+| **Payroll** | CNSS / AMO bulletin, declaration export | 🟢 Backend + UI shipped with real CNSS/AMO/IGR math; rates still need accountant confirmation |
+| **Attendance** | Pointage: badge / mobile / manual | 🟢 Shipped (11 routes, 47 KB UI) |
+| **Cash shifts** | Shift open/close, X/Z reports per till | 🟢 Shipped (7 routes, 27 KB UI) |
+| **Accounting export** | FEC-style ledger an accountant can import | 🟡 Routes + chart of accounts + `.zip` export work and balance; flagged non-certified until an accountant validates the chart |
+| **Dunning** | Payment reminders by email / WhatsApp | 🔴 Backend exists but `GET /api/dunning/invoices/:id` returns **500** (`i.invoice_number` should be `number`) |
+| **Thermal printing** | 58 / 80 mm ESC/POS on real printers | 🟡 Android ESC/POS shipped; discounts and VR-receipt cases untested |
+| **Field reality** | Works with no signal, syncs later | 🟡 Queue and idempotent contract shipped and verified; 404/429 handling and account-switch tests outstanding |
+| **Fresh install** | A new deployment can provision its database | 🔴 `wrangler d1 migrations apply` fails on an empty D1 (`0002` needs tables only a running Worker creates) |
+
+---|---|---|
 | **DGI e-invoicing** | UBL 2.1 export with Moroccan identifiers, `ICE`, `IF`, `RC`, legal mentions, 10-year archive | 🟡 XML produced locally; clearance requires the official DGI platform (xHub / Simpl-TVA / PDP) once its API is published |
 | **Payroll** | CNSS / AMO declarations, payroll bulletin, CSV export for the accountant | 🟡 Employee records and PDF mentions exist; bulletin and declaration export missing |
 | **Attendance** | Pointage with RFID / badge / mobile check-in | 🔴 Data model only — no UI |
@@ -247,8 +260,8 @@ A **Discord server** for Etherealmber is on the way, with an **Atlas bot** to go
 <!-- ROADMAP:START -->
 | Quarter | Milestone | Scope | Status | Progress |
 |---|---|---|---|---|
-| **Q4 2026** | **Atlas Commerce 1.0** | Hardening, DGI go-live when credentials exist, remove the beta tag _(live: `0.9.2-beta`)_ | 🟡 in progress | ![93%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91-93%25-2ea44f?style=flat-square) |
-| **Q4 2026** | **Atlas Commerce Android 2.0** | Printing and offline queue shipped; final stability pass and store-ready release _(live: `1.8.2`)_ | 🟡 in progress | ![95%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88-95%25-2ea44f?style=flat-square) |
+| **Q4 2026** | **Atlas Commerce 1.0** | Mount the DGI routes, fix the dunning 500, make fresh-D1 migrations work, align the payroll role gate _(live: `0.9.2-beta`)_ | 🟡 in progress | ![88%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91-88%25-2ea44f?style=flat-square) |
+| **Q4 2026** | **Atlas Commerce Android 2.0** | CI is green; add fake-HTTP queue tests, make 404/429 terminal, scope the queue by location, then release 2.0 _(live: `1.8.2`)_ | 🟡 in progress | ![92%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91-92%25-2ea44f?style=flat-square) |
 | **Q4 2026** | **Desktop — resume after login fix** | Paused: the desktop client is not being extended until the login issue is fixed on web; then parity work continues _(live: `0.3.2`)_ | ⚪ blocked | ![40%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-40%25-fbca04?style=flat-square) |
 | **Q1 2027** | **Atlas Shop v1 — catalogue** | New repository; products, prices, stock availability and media read live from Atlas Commerce via Partner API v1 | ⚪ not started | ![0%](https://img.shields.io/badge/%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-0%25-9e9e9e?style=flat-square) |
 | **Q1 2027** | **Support portal v1 (help platform)** | A separate help portal — not the in-app contact page: knowledge base, ticket submission and history, status page, and tickets linked to real customer and order records | ⚪ planned | ![10%](https://img.shields.io/badge/%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-10%25-9e9e9e?style=flat-square) |
@@ -256,7 +269,7 @@ A **Discord server** for Etherealmber is on the way, with an **Atlas bot** to go
 | **Q2 2027** | **Shared connection layer** | Idempotent offline-operations contract live across web and Android; extend to Shop and Support | 🟡 in progress | ![75%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91-75%25-2ea44f?style=flat-square) |
 | **Q2 2027** | **Desktop 1.0** | Full module parity and signed auto-updates for all three platforms _(live: `0.3.2`)_ | ⚪ planned | ![40%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-40%25-fbca04?style=flat-square) |
 | **Q3 2027** | **Unified experience** | Single sign-on across products, one alert inbox, one customer view | ⚪ planned | ![15%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-15%25-9e9e9e?style=flat-square) |
-| **Q3 2027** | **DGI e-invoicing readiness** | Clearance route, state machine and stub adapter shipped; live submission waits on official DGI API and credentials | 🟡 partial | ![70%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91-70%25-2ea44f?style=flat-square) |
+| **Q3 2027** | **DGI e-invoicing readiness** | Adapter, state machine and archive are written but the routes are unmounted and the adapter is stub-only | 🟡 partial | ![55%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91-55%25-fbca04?style=flat-square) |
 | **Q4 2027** | **Complete, enhanced system** | Documentation, polish, migrations, v1.x across every client — one platform | ⚪ planned | ![5%](https://img.shields.io/badge/%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91-5%25-9e9e9e?style=flat-square) |
 <!-- ROADMAP:END -->
 
