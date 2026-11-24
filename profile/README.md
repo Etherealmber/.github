@@ -225,29 +225,6 @@ A working ERP is not a compliant one. These are the market-specific gaps that re
 | **Field reality** | Works with no signal, syncs later | 🟢 Queue and idempotent contract verified end to end, with 404/429/5xx policy and account scoping under contract tests |
 | **Fresh install** | A new deployment can provision its database | 🟢 `wrangler d1 migrations apply` runs clean on an empty D1, and CI fails if that ever breaks again |
 
----|---|---|
-| **DGI e-invoicing** | UBL 2.1 with `ICE`, `IF`, `RC`, legal mentions, 10-year archive | 🔴 Code exists but the routes are **unmounted** (`registerDgiRoutes` never called → every `/api/invoices/:id/dgi*` returns 404); adapter is stub-only |
-| **Payroll** | CNSS / AMO bulletin, declaration export | 🟢 Backend + UI shipped with real CNSS/AMO/IGR math; rates still need accountant confirmation |
-| **Attendance** | Pointage: badge / mobile / manual | 🟢 Shipped (11 routes, 47 KB UI) |
-| **Cash shifts** | Shift open/close, X/Z reports per till | 🟢 Shipped (7 routes, 27 KB UI) |
-| **Accounting export** | FEC-style ledger an accountant can import | 🟡 Routes + chart of accounts + `.zip` export work and balance; flagged non-certified until an accountant validates the chart |
-| **Dunning** | Payment reminders by email / WhatsApp | 🔴 Backend exists but `GET /api/dunning/invoices/:id` returns **500** (`i.invoice_number` should be `number`) |
-| **Thermal printing** | 58 / 80 mm ESC/POS on real printers | 🟡 Android ESC/POS shipped; discounts and VR-receipt cases untested |
-| **Field reality** | Works with no signal, syncs later | 🟡 Queue and idempotent contract shipped and verified; 404/429 handling and account-switch tests outstanding |
-| **Fresh install** | A new deployment can provision its database | 🔴 `wrangler d1 migrations apply` fails on an empty D1 (`0002` needs tables only a running Worker creates) |
-
----|---|---|
-| **DGI e-invoicing** | UBL 2.1 export with Moroccan identifiers, `ICE`, `IF`, `RC`, legal mentions, 10-year archive | 🟡 XML produced locally; clearance requires the official DGI platform (xHub / Simpl-TVA / PDP) once its API is published |
-| **Payroll** | CNSS / AMO declarations, payroll bulletin, CSV export for the accountant | 🟡 Employee records and PDF mentions exist; bulletin and declaration export missing |
-| **Attendance** | Pointage with RFID / badge / mobile check-in | 🔴 Data model only — no UI |
-| **Accounting export** | Ledger extract an accountant can import (FEC-style) | 🔴 Not started |
-| **Dunning** | Payment reminders by email and WhatsApp link | 🔴 Not started |
-| **Thermal printing** | 58 / 80 mm receipts on the printers merchants actually buy | 🟡 Web printing exists; no Bluetooth/ESC-POS path on Android |
-| **Cash-heavy workflows** | Cash drawer, shift close, Z-report per till | 🟡 Cash balance exists; formal shift/Z reporting missing |
-| **Field reality** | Works without signal in a warehouse, syncs later | 🟡 Scoped offline caches on Android; queued offline writes still limited |
-
----
-
 ## 💬 Atlas Bot + Discord — coming soon
 
 A **Discord server** for Etherealmber is on the way, with an **Atlas bot** to go with it: release notes, status announcements and help for people running Atlas Commerce. Not started yet — no repo, no bot token, nothing to install.
