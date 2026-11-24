@@ -48,7 +48,7 @@ const REPOS = [
   },
   {
     slug: 'atlas-commerce-desktop',
-    what: 'Native desktop client — Rust + egui, Windows 10/11 (Linux and macOS stated)',
+    what: 'Native desktop client — Rust + egui, Windows / Linux / macOS (unsigned)',
     // Releases are published in bursts; when none exist we fall back to the
     // Cargo workspace version so the table never goes blank.
     versionFrom: 'cargo',

@@ -12,8 +12,8 @@
 
 <!-- STATS:START -->
 ![repositories](https://img.shields.io/badge/repositories-5-24292f?style=flat-square&logo=github&logoColor=white)
-![commits](https://img.shields.io/badge/commits-1655-24292f?style=flat-square)
-![merged PRs](https://img.shields.io/badge/merged%20PRs-357-2ea44f?style=flat-square)
+![commits](https://img.shields.io/badge/commits-1658-24292f?style=flat-square)
+![merged PRs](https://img.shields.io/badge/merged%20PRs-358-2ea44f?style=flat-square)
 ![releases](https://img.shields.io/badge/releases-7-2ea44f?style=flat-square)
 ![closed issues](https://img.shields.io/badge/closed%20issues-71-24292f?style=flat-square)
 ![license](https://img.shields.io/badge/license-MIT-3da639?style=flat-square)
@@ -22,7 +22,7 @@
 <sub>🔄 Auto-refreshed from the GitHub API — last update **2026-11-24**. No manual edits needed.</sub>
 <!-- STATS:END -->
 
-[What we do](#-what-we-do) · [Products](#-products) · [Where it runs](#-where-it-runs) · [Repositories](#%EF%B8%8F-repositories) · [Latest releases](#-latest-releases) · [Not done yet](#-what-is-not-done-yet) · [Discord](#-atlas-bot--discord--coming-soon) · [Morocco requirements](#%EF%B8%8F-what-morocco-still-requires) · [Roadmap](#-roadmap) · [Contact](#-contact)
+[What we do](#-what-we-do) · [Products](#-products) · [Where it runs](#-where-it-runs) · [Repositories](#%EF%B8%8F-repositories) · [Latest releases](#-latest-releases) · [Not done yet](#-what-is-not-done-yet) · [Desktop releases](#-desktop-releases--unsigned-on-purpose-for-now) · [Discord](#-atlas-bot--discord--coming-soon) · [Morocco requirements](#%EF%B8%8F-what-morocco-still-requires) · [Roadmap](#-roadmap) · [Contact](#-contact)
 
 </div>
 
@@ -52,7 +52,7 @@ No opaque SaaS subscriptions, no dedicated servers, no locked-in vendor. Every d
 | **Scan & OCR** | Native barcode scanning, photo-driven product requests, invoice and quote OCR |
 | **AI assistance** | Atlas Agent — grounded on live stock, sales and balances, with per-action permissions and confirmation |
 | **Security** | Password + OTP, WebAuthn / passkeys, 60-second single-use QR pairing, device fingerprint binding, role-based access, audit log |
-| **Every surface** | Browser, native Android 11+ (Kotlin), native desktop on Windows 10/11 (Rust) — same account, same data, same rules |
+| **Every surface** | Browser, native Android 11+ (Kotlin), native desktop on Windows / Linux / macOS (Rust) — same account, same data, same rules |
 
 ---
 
@@ -111,13 +111,15 @@ Native Kotlin + Jetpack Compose (Material 3), `minSdk 30` — **Android 11 and u
 
 ### 🖥️ Atlas Commerce for Desktop · <!--VER:atlas-commerce-desktop-->`0.3.2`<!--/VER-->
 
-Native Rust + egui (fastframe) client — no browser engine, no telemetry, `reqwest` + rustls.
+Native Rust + egui (fastframe) client for **Windows, Linux and macOS** — no browser engine, no telemetry, `reqwest` + rustls.
 
-| Platform | Status |
-|---|---|
-| **Windows 10 / 11** | ✅ Supported — installer asks for the server address and pins it |
-| **Linux** | ⚪ Stated target — not shipped yet |
-| **macOS** | ⚪ Stated target — not shipped yet |
+| Platform | Builds | Code-signed |
+|---|---|---|
+| **Windows 10 / 11** (x64 + ARM64) | ✅ Inno Setup installer produced in CI | ⏳ Unsigned for now — SmartScreen shows "unknown publisher" |
+| **Linux** (x64) | ✅ `.deb`, `.rpm`, AppImage produced in CI | ⏳ Unsigned for now |
+| **macOS** (universal) | ✅ `.dmg` produced in CI | ⏳ Ad-hoc signed only — Gatekeeper asks before opening |
+
+> **No desktop release has been published yet.** Builds are validation artifacts only, and packages are intentionally unsigned for now — see [Desktop releases](#-desktop-releases--unsigned-on-purpose-for-now).
 
 > ⏸️ **Paused on purpose.** The desktop client is not being extended until the **login issue** on the web app is fixed. Once sign-in is solid, desktop work resumes from the 0.3.2 base already shipped.
 
@@ -153,8 +155,7 @@ The customer-facing storefront, reading products, stock, prices and media straig
 |---|---|---|
 | **Web core** | Any modern browser — Chrome, Edge, Firefox, Safari | French-first, phone-aware, light and dark themes |
 | **Android** | **Android 11 and up** (`minSdk 30`, built against API 35) | Signed APK for phones and handheld scanners; Android 12+ asks for the Nearby-devices permission before listing printers |
-| **Desktop** | **Windows 10 and 11** | Native Rust + egui, installer pins the server address |
-| **Desktop — Linux / macOS** | ⚪ Not shipped | Both are stated targets; the code is cross-platform but no builds are published yet |
+| **Desktop** | **Windows 10 / 11**, Linux, macOS | Native Rust + egui. All three build in CI; **none is code-signed**, so expect OS warnings until certificates are in place |
 
 ---
 
@@ -163,11 +164,11 @@ The customer-facing storefront, reading products, stock, prices and media straig
 <!-- REPOS:START -->
 | Repository | What it is | Version | Delivery |
 |---|---|---|---|
-| [**atlas-commerce**](https://github.com/Etherealmber/atlas-commerce) | ERP / POS / invoicing core — Cloudflare Workers, D1, R2, React | ![0.9.2-beta](https://img.shields.io/badge/version-0.9.2-beta-8250df?style=flat-square) | ![586 commits](https://img.shields.io/badge/586%20commits-209%20PRs-2ea44f?style=flat-square) |
+| [**atlas-commerce**](https://github.com/Etherealmber/atlas-commerce) | ERP / POS / invoicing core — Cloudflare Workers, D1, R2, React | ![0.9.2-beta](https://img.shields.io/badge/version-0.9.2-beta-8250df?style=flat-square) | ![588 commits](https://img.shields.io/badge/588%20commits-210%20PRs-2ea44f?style=flat-square) |
 | [**atlas-commerce-android**](https://github.com/Etherealmber/atlas-commerce-android) | Native Android companion — Kotlin + Jetpack Compose, Android 11+ | [![1.8.0](https://img.shields.io/badge/v1.8.0-1.8.0%20latest-2ea44f?style=flat-square)](https://github.com/Etherealmber/atlas-commerce-android/releases) | ![558 commits](https://img.shields.io/badge/558%20commits-106%20PRs-2ea44f?style=flat-square) ![releases](https://img.shields.io/badge/releases-7-2ea44f?style=flat-square) |
-| [**atlas-commerce-desktop**](https://github.com/Etherealmber/atlas-commerce-desktop) | Native desktop client — Rust + egui, Windows 10/11 (Linux and macOS stated) | ![0.3.2](https://img.shields.io/badge/version-0.3.2-8250df?style=flat-square) | ![454 commits](https://img.shields.io/badge/454%20commits-32%20PRs-2ea44f?style=flat-square) |
+| [**atlas-commerce-desktop**](https://github.com/Etherealmber/atlas-commerce-desktop) | Native desktop client — Rust + egui, Windows / Linux / macOS (unsigned) | ![0.3.2](https://img.shields.io/badge/version-0.3.2-8250df?style=flat-square) | ![454 commits](https://img.shields.io/badge/454%20commits-32%20PRs-2ea44f?style=flat-square) |
 | [**afmarbre-main**](https://github.com/Etherealmber/afmarbre-main) | Client platform — catalogue, quotes, CMS admin on Workers | `—` | ![5 commits](https://img.shields.io/badge/5%20commits-0%20PRs-9e9e9e?style=flat-square) |
-| [**\.github**](https://github.com/Etherealmber/.github) | Organization profile and brand assets (this page) | `—` | ![52 commits](https://img.shields.io/badge/52%20commits-10%20PRs-2ea44f?style=flat-square) ![profile](https://img.shields.io/badge/profile-live-2ea44f?style=flat-square) |
+| [**\.github**](https://github.com/Etherealmber/.github) | Organization profile and brand assets (this page) | `—` | ![53 commits](https://img.shields.io/badge/53%20commits-10%20PRs-2ea44f?style=flat-square) ![profile](https://img.shields.io/badge/profile-live-2ea44f?style=flat-square) |
 <!-- REPOS:END -->
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?style=flat-square&logo=typescript&logoColor=white)
@@ -199,7 +200,7 @@ Honest list — these are the open items, in the order they are being worked on.
 | **Atlas Shop — connected storefront** | ![0%](https://img.shields.io/badge/%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93-0%25-6e7681?style=flat-square) ⚪ not started | Plans to read products, prices, stock and media from Atlas Commerce through the Partner API + webhooks. Repository not created yet |
 | **Support portal** | ![10%](https://img.shields.io/badge/%E2%96%88%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93-10%25-6e7681?style=flat-square) ⚪ planned | A separate help platform (knowledge base, tickets, status), not the in-app `/support` contact page. Only the `SUPPORT-SYNC` hooks exist so far |
 | **DGI e-invoicing clearance** | ![62%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%93%E2%96%93%E2%96%93%E2%96%93-62%25-fbca04?style=flat-square) 🟡 partial | Routes mounted and RBAC tested (#215); adapter remains stub-only until DGI_BASE_URL/credentials exist and the official CIUS is published |
-| **Desktop app — paused on the login issue** | ![40%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93-40%25-fbca04?style=flat-square) ⚪ blocked | On hold: the login issue is fixed first, then parity work resumes |
+| **Desktop app — paused on the login issue** | ![40%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93-40%25-fbca04?style=flat-square) ⚪ blocked | On hold: the login issue is fixed first, then parity work resumes. Builds exist for Windows 10/11, Linux and macOS; unsigned by design, no public release yet |
 | **Worker monolith peel** | ![75%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%93%E2%96%93-75%25-2ea44f?style=flat-square) 🟡 ongoing | `routes/`, `repositories/`, `services/` extracted; `index.ts` still carries clusters |
 | **TypeScript baseline cleanup** | ![100%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88-100%25-2ea44f?style=flat-square) 🟢 done | `src=0` and `worker=0` in `scripts/tsc-baseline.txt` — the guard now enforces zero, not a delta |
 | **Atlas Bot + Discord server** | ![0%](https://img.shields.io/badge/%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93-0%25-6e7681?style=flat-square) ⚪ not started | Coming soon — Atlas bot for Discord and a community server |
@@ -215,7 +216,7 @@ Honest list — these are the open items, in the order they are being worked on.
 |---|---|---|
 | **Atlas Commerce (web core)** | ![92%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%93-92%25-2ea44f?style=flat-square) **92 %** | `0.9.2-beta` pre-1.0 blockers closed on main; `src/` and `worker/` both type-check at **0 errors** and the guards hold them there. DGI clearance still runs on the stub adapter until the official platform opens |
 | **Atlas Commerce Android** | ![96%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88-96%25-2ea44f?style=flat-square) **96 %** | `1.8.0` — Android 11+ (`minSdk 30`); queue replay, retry policy and receipt guards covered by 18 contract tests in CI, printer permission guard added for Android 12+ |
-| **Atlas Commerce Desktop** | ![40%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93-40%25-fbca04?style=flat-square) **40 %** | On hold at `0.3.2` — paused until the login issue is fixed. Windows 10/11 supported; Linux and macOS are stated, not yet shipped |
+| **Atlas Commerce Desktop** | ![40%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93-40%25-fbca04?style=flat-square) **40 %** | On hold at `0.3.2` — paused until the login issue is fixed. Builds for Windows, Linux and macOS; packages are unsigned on purpose until there is a public release |
 | **Atlas Shop** | ![0%](https://img.shields.io/badge/%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93-0%25-6e7681?style=flat-square) **0 %** | Not started — the next major build |
 | **Support portal** | ![10%](https://img.shields.io/badge/%E2%96%88%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93-10%25-6e7681?style=flat-square) **10 %** | **Not the in-app `/support` page.** A separate help platform: knowledge base, ticket submission and history, status page — reading the same customer records as Atlas Commerce. Only the `SUPPORT-SYNC` hooks and the in-app contact page exist so far |
 | **One connected platform** | ![65%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%93%E2%96%93%E2%96%93-65%25-fbca04?style=flat-square) **65 %** | Commerce, Android and the offline contract are live; Shop and the Support portal are the missing halves of the platform |
@@ -242,6 +243,26 @@ A working ERP is not a compliant one. These are the market-specific gaps that re
 | **Field reality** | Works with no signal, syncs later | 🟢 Queue and idempotent contract verified end to end, with 404/429/5xx policy and account scoping under contract tests |
 | **Fresh install** | A new deployment can provision its database | 🟢 `wrangler d1 migrations apply` runs clean on an empty D1, and CI fails if that ever breaks again |
 
+## 🔏 Desktop releases — unsigned on purpose, for now
+
+The desktop client builds on **Windows, Linux and macOS**, but **no package is code-signed**, and that is a deliberate choice at this stage rather than an oversight.
+
+**Why.** Code signing is a recurring cost — an Authenticode certificate for Windows, an Apple Developer Program membership for macOS — and it only matters once there are public releases to protect. There are not yet. So for now the desktop builds are **validation artifacts**: they prove the code compiles and packages correctly on all three platforms, and nothing else is claimed about them.
+
+**What that means if you build it yourself.**
+
+| Platform | What the OS will say | What to do |
+|---|---|---|
+| **Windows 10 / 11** | SmartScreen: *"Windows protected your PC — unknown publisher"* | Click **More info → Run anyway**. The warning is about the missing certificate, not about the contents |
+| **macOS** | Gatekeeper: *"cannot be opened because the developer cannot be verified"* | Right-click the app → **Open**, then confirm. Apple silicon requires the ad-hoc signature that is already applied |
+| **Linux** | Nothing — no OS prompt | Unsigned `.deb` / `.rpm` packages; `checksums.txt` is published alongside |
+
+**This will change.** Signing is planned before the first public desktop release, and the release workflow is already wired for it: the macOS job reads its Apple secrets and signs + notarizes the moment they exist, falling back to ad-hoc signing when they do not. Update manifests are already Ed25519-signed. When certificates are in place, this section will say so.
+
+> If an unsigned build is a blocker for your organisation, [open an issue](https://github.com/Etherealmber/atlas-commerce-desktop/issues/new) — knowing there is demand is what moves signing up the list.
+
+---
+
 ## 💬 Atlas Bot + Discord — coming soon
 
 A **Discord server** for Etherealmber is on the way, with an **Atlas bot** to go with it: release notes, status announcements and help for people running Atlas Commerce. Not started yet — no repo, no bot token, nothing to install.
@@ -265,12 +286,12 @@ A **Discord server** for Etherealmber is on the way, with an **Atlas bot** to go
 |---|---|---|---|---|
 | **Q4 2026** | **Atlas Commerce 1.0** | Blocker sweep done on main (#215, #216): DGI mounted, dunning fixed, blank-D1 migrations green in CI, payroll gate aligned. Remaining: DGI live submission once the official platform opens _(live: `0.9.2-beta`)_ | 🟡 in progress | ![92%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%93-92%25-2ea44f?style=flat-square) |
 | **Q4 2026** | **Atlas Commerce Android 2.0** | Contract tests, conflict/rejected split and held-write exit merged (#131); one polish pass left, then the 2.0 release _(live: `1.8.0`)_ | 🟡 in progress | ![96%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88-96%25-2ea44f?style=flat-square) |
-| **Q4 2026** | **Desktop — resume after login fix** | Paused: not extended until the login issue is fixed on web. Windows 10/11 is the supported target; Linux and macOS are stated but not shipped _(live: `0.3.2`)_ | ⚪ blocked | ![40%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93-40%25-fbca04?style=flat-square) |
+| **Q4 2026** | **Desktop — resume after login fix** | Paused: not extended until the login issue is fixed on web. Windows, Linux and macOS all build in CI; packages stay unsigned until a public release is planned _(live: `0.3.2`)_ | ⚪ blocked | ![40%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93-40%25-fbca04?style=flat-square) |
 | **Q1 2027** | **Atlas Shop v1 — catalogue** | New repository; products, prices, stock availability and media read live from Atlas Commerce via Partner API v1 | ⚪ not started | ![0%](https://img.shields.io/badge/%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93-0%25-6e7681?style=flat-square) |
 | **Q1 2027** | **Support portal v1 (help platform)** | A separate help portal — not the in-app contact page: knowledge base, ticket submission and history, status page, and tickets linked to real customer and order records | ⚪ planned | ![10%](https://img.shields.io/badge/%E2%96%88%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93-10%25-6e7681?style=flat-square) |
 | **Q2 2027** | **Atlas Shop — orders & checkout** | Cart, orders, payment options, stock reservation written back to the ERP | ⚪ planned | ![0%](https://img.shields.io/badge/%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93-0%25-6e7681?style=flat-square) |
 | **Q2 2027** | **Shared connection layer** | Idempotent offline-operations contract live across web and Android; extend to Shop and Support | 🟡 in progress | ![82%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%93%E2%96%93-82%25-2ea44f?style=flat-square) |
-| **Q2 2027** | **Desktop 1.0** | Full module parity and signed auto-updates. Windows 10/11 first; Linux and macOS follow _(live: `0.3.2`)_ | ⚪ planned | ![40%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93-40%25-fbca04?style=flat-square) |
+| **Q2 2027** | **Desktop 1.0** | Full module parity and signed auto-updates. Signing comes with the first public release, not before _(live: `0.3.2`)_ | ⚪ planned | ![40%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93-40%25-fbca04?style=flat-square) |
 | **Q3 2027** | **Unified experience** | Single sign-on across products, one alert inbox, one customer view | ⚪ planned | ![15%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93-15%25-6e7681?style=flat-square) |
 | **Q3 2027** | **DGI e-invoicing readiness** | Adapter, state machine, archive and RBAC are live and tested; submissions still go through the stub until the official DGI platform publishes its API | 🟡 partial | ![62%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%93%E2%96%93%E2%96%93%E2%96%93-62%25-fbca04?style=flat-square) |
 | **Q4 2027** | **Complete, enhanced system** | Documentation, polish, migrations, v1.x across every client — one platform | ⚪ planned | ![5%](https://img.shields.io/badge/%E2%96%88%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93-5%25-6e7681?style=flat-square) |
@@ -292,7 +313,7 @@ edge-first        Cloudflare Workers · D1 · R2 · Durable Objects
 no lock-in        the client owns the account, the data and the deploy
 private by default secrets in Wrangler, never in the repo
 native clients    Kotlin and Rust — no browser engine on phone or desktop
-supported today  Android 11+ · Windows 10/11 desktop · any modern browser
+supported today  Android 11+ · Windows / Linux / macOS desktop · any modern browser
 French terrain    UI written for the field, in the language of the field
 verifiable work   CI guards, issue bots, signed releases
 ```
