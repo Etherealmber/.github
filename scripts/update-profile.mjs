@@ -240,6 +240,17 @@ async function collect() {
 const BLOCK = '\u2588';
 const DARK = '\u2593';
 
+// shields.io parses a static badge as exactly label-message-color. A literal
+// dash inside a field splits it into extra tokens and the endpoint answers with
+// "404: badge not found" — served with HTTP 200, so no link checker catches it.
+// A literal dash must be doubled; underscores and spaces are escaped too.
+function badgeField(value) {
+  return String(value)
+    .replace(/-/g, '--')
+    .replace(/_/g, '__')
+    .replace(/ /g, '%20');
+}
+
 function bar(pct) {
   const filled = Math.max(0, Math.min(10, Math.round(Number(pct) / 10)));
   return BLOCK.repeat(filled) + DARK.repeat(10 - filled);
@@ -257,8 +268,8 @@ function barBadge(pct) {
 }
 
 function plainBadge(label, value, color, logo) {
-  const l = encodeURIComponent(label).replace(/-/g, '--').replace(/_/g, '__');
-  const v = encodeURIComponent(value).replace(/-/g, '--').replace(/_/g, '__');
+  const l = badgeField(label);
+  const v = badgeField(value);
   const logoQs = logo ? `&logo=${logo}&logoColor=white` : '';
   return `![${label}](https://img.shields.io/badge/${l}-${v}-${color}?style=flat-square${logoQs})`;
 }
@@ -290,7 +301,7 @@ function versionBadge(repo, stats) {
 
   if (versionFrom === 'release') {
     const badge = `https://img.shields.io/github/v/release/${ORG}/${slug}?style=flat-square&label=release`;
-    return `[![${v}](https://img.shields.io/badge/v${encodeURIComponent(v)}-${encodeURIComponent(v)}%20latest-2ea44f?style=flat-square)](https://github.com/${ORG}/${slug}/releases)`;
+    return `[![${v}](https://img.shields.io/badge/v${badgeField(v)}-${badgeField(v)}%20latest-2ea44f?style=flat-square)](https://github.com/${ORG}/${slug}/releases)`;
   }
 
   // The badge must read the same file the version came from, otherwise it
@@ -298,7 +309,7 @@ function versionBadge(repo, stats) {
   const file = versionFrom === 'cargo' ? 'Cargo.toml' : 'src/version.ts';
   const label = versionFrom === 'cargo' ? 'version' : 'app%20version';
   const raw = `https%3A%2F%2Fraw.githubusercontent.com%2F${ORG}%2F${slug}%2Fmain%2F${file}`;
-  return `![${v}](https://img.shields.io/badge/version-${encodeURIComponent(v)}-8250df?style=flat-square)`;
+  return `![${v}](https://img.shields.io/badge/version-${badgeField(v)}-8250df?style=flat-square)`;
 }
 
 function renderStats(stats) {

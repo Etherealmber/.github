@@ -17,8 +17,8 @@
     {
       "name": "Atlas Commerce Desktop",
       "repo": "atlas-commerce-desktop",
-      "pct": 40,
-      "reading": "On hold at `0.3.2` — paused until the login issue is fixed. Builds for Windows, Linux and macOS; packages are unsigned on purpose until there is a public release"
+      "pct": 15,
+      "reading": "**Pre-release underway at `0.1.0`.** Being rebuilt toward full web feature parity with a stronger offline layer than Android can offer — no mobile storage or battery limits. Previous `0.3.2` code is being superseded"
     },
     {
       "name": "Atlas Shop",
@@ -64,10 +64,10 @@
     },
     {
       "quarter": "Q4 2026",
-      "milestone": "Desktop — resume after login fix",
-      "scope": "Paused: not extended until the login issue is fixed on web. Windows, Linux and macOS all build in CI; packages stay unsigned until a public release is planned",
-      "status": "blocked",
-      "pct": 40,
+      "milestone": "Desktop — `0.1.0` pre-release",
+      "scope": "Pre-release published in the coming days: every web feature, offline mode better than Android's because a desktop has no storage or battery limit",
+      "status": "in progress",
+      "pct": 15,
       "repo": "atlas-commerce-desktop"
     },
     {
@@ -105,9 +105,9 @@
     {
       "quarter": "Q2 2027",
       "milestone": "Desktop 1.0",
-      "scope": "Full module parity and signed auto-updates. Signing comes with the first public release, not before",
+      "scope": "Full module parity reached; signed auto-updates and a stable `1.0.0` after the pre-release series",
       "status": "planned",
-      "pct": 40,
+      "pct": 15,
       "repo": "atlas-commerce-desktop"
     },
     {
@@ -155,10 +155,10 @@
       "notes": "Routes mounted and RBAC tested (#215); adapter remains stub-only until DGI_BASE_URL/credentials exist and the official CIUS is published"
     },
     {
-      "item": "Desktop app — paused on the login issue",
-      "status": "blocked",
-      "pct": 40,
-      "notes": "On hold: the login issue is fixed first, then parity work resumes. Builds exist for Windows 10/11, Linux and macOS; unsigned by design, no public release yet"
+      "item": "Desktop app — `0.1.0` pre-release in progress",
+      "status": "in progress",
+      "pct": 15,
+      "notes": "Reset to a `0.1.0` pre-release: full web feature parity plus an offline layer stronger than Android's (no storage, memory or battery ceiling). Pre-releases published in the coming days"
     },
     {
       "item": "Worker monolith peel",
