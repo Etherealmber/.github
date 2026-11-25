@@ -12,8 +12,8 @@
 
 <!-- STATS:START -->
 ![repositories](https://img.shields.io/badge/repositories-5-24292f?style=flat-square&logo=github&logoColor=white)
-![commits](https://img.shields.io/badge/commits-1781-24292f?style=flat-square)
-![merged PRs](https://img.shields.io/badge/merged%20PRs-395-2ea44f?style=flat-square)
+![commits](https://img.shields.io/badge/commits-1783-24292f?style=flat-square)
+![merged PRs](https://img.shields.io/badge/merged%20PRs-396-2ea44f?style=flat-square)
 ![releases](https://img.shields.io/badge/releases-7-2ea44f?style=flat-square)
 ![closed issues](https://img.shields.io/badge/closed%20issues-81-24292f?style=flat-square)
 ![license](https://img.shields.io/badge/license-MIT-3da639?style=flat-square)
@@ -166,7 +166,7 @@ The customer-facing storefront, reading products, stock, prices and media straig
 | [**atlas-commerce-android**](https://github.com/Etherealmber/atlas-commerce-android) | Native Android companion — Kotlin + Jetpack Compose, Android 11+ | [![1.8.0](https://img.shields.io/badge/v1.8.0-1.8.0%20latest-2ea44f?style=flat-square)](https://github.com/Etherealmber/atlas-commerce-android/releases) | ![597 commits](https://img.shields.io/badge/597%20commits-114%20PRs-2ea44f?style=flat-square) ![releases](https://img.shields.io/badge/releases-7-2ea44f?style=flat-square) |
 | [**atlas-commerce-desktop**](https://github.com/Etherealmber/atlas-commerce-desktop) | Native desktop client — Rust + egui, Windows / Linux / macOS (unsigned) | ![0.3.2](https://img.shields.io/badge/version-0.3.2-8250df?style=flat-square) | ![454 commits](https://img.shields.io/badge/454%20commits-32%20PRs-2ea44f?style=flat-square) |
 | [**afmarbre-main**](https://github.com/Etherealmber/afmarbre-main) | Client platform — catalogue, quotes, CMS admin on Workers | `—` | ![5 commits](https://img.shields.io/badge/5%20commits-0%20PRs-9e9e9e?style=flat-square) |
-| [**\.github**](https://github.com/Etherealmber/.github) | Organization profile and brand assets (this page) | `—` | ![57 commits](https://img.shields.io/badge/57%20commits-11%20PRs-2ea44f?style=flat-square) ![profile](https://img.shields.io/badge/profile-live-2ea44f?style=flat-square) |
+| [**\.github**](https://github.com/Etherealmber/.github) | Organization profile and brand assets (this page) | `—` | ![59 commits](https://img.shields.io/badge/59%20commits-12%20PRs-2ea44f?style=flat-square) ![profile](https://img.shields.io/badge/profile-live-2ea44f?style=flat-square) |
 <!-- REPOS:END -->
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?style=flat-square&logo=typescript&logoColor=white)
