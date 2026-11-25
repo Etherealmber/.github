@@ -12,14 +12,14 @@
 
 <!-- STATS:START -->
 ![repositories](https://img.shields.io/badge/repositories-5-24292f?style=flat-square&logo=github&logoColor=white)
-![commits](https://img.shields.io/badge/commits-1660-24292f?style=flat-square)
-![merged PRs](https://img.shields.io/badge/merged%20PRs-359-2ea44f?style=flat-square)
+![commits](https://img.shields.io/badge/commits-1750-24292f?style=flat-square)
+![merged PRs](https://img.shields.io/badge/merged%20PRs-388-2ea44f?style=flat-square)
 ![releases](https://img.shields.io/badge/releases-7-2ea44f?style=flat-square)
-![closed issues](https://img.shields.io/badge/closed%20issues-71-24292f?style=flat-square)
+![closed issues](https://img.shields.io/badge/closed%20issues-80-24292f?style=flat-square)
 ![license](https://img.shields.io/badge/license-MIT-3da639?style=flat-square)
 ![based in](https://img.shields.io/badge/based%20in-Morocco-c1272d?style=flat-square)
 
-<sub>🔄 Auto-refreshed from the GitHub API — last update **2026-11-24**. No manual edits needed.</sub>
+<sub>🔄 Auto-refreshed from the GitHub API — last update **2026-11-25**. No manual edits needed.</sub>
 <!-- STATS:END -->
 
 [What we do](#-what-we-do) · [Products](#-products) · [Where it runs](#-where-it-runs) · [Repositories](#%EF%B8%8F-repositories) · [Latest releases](#-latest-releases) · [Not done yet](#-what-is-not-done-yet) · [Desktop releases](#-desktop-releases--unsigned-on-purpose-for-now) · [Discord](#-atlas-bot--discord--coming-soon) · [Morocco requirements](#%EF%B8%8F-what-morocco-still-requires) · [Roadmap](#-roadmap) · [Contact](#-contact)
@@ -58,7 +58,7 @@ No opaque SaaS subscriptions, no dedicated servers, no locked-in vendor. Every d
 
 ## 📦 Products
 
-### 🧾 Atlas Commerce — web core · <!--VER:atlas-commerce-->`0.9.2-beta`<!--/VER-->
+### 🧾 Atlas Commerce — web core · <!--VER:atlas-commerce-->`0.9.3-beta`<!--/VER-->
 
 The operational core, self-hosted on Cloudflare Workers. Fully themeable (light / dark, densities, text sizes), French-first, phone-aware.
 
@@ -164,11 +164,11 @@ The customer-facing storefront, reading products, stock, prices and media straig
 <!-- REPOS:START -->
 | Repository | What it is | Version | Delivery |
 |---|---|---|---|
-| [**atlas-commerce**](https://github.com/Etherealmber/atlas-commerce) | ERP / POS / invoicing core — Cloudflare Workers, D1, R2, React | ![0.9.2-beta](https://img.shields.io/badge/version-0.9.2-beta-8250df?style=flat-square) | ![588 commits](https://img.shields.io/badge/588%20commits-210%20PRs-2ea44f?style=flat-square) |
-| [**atlas-commerce-android**](https://github.com/Etherealmber/atlas-commerce-android) | Native Android companion — Kotlin + Jetpack Compose, Android 11+ | [![1.8.0](https://img.shields.io/badge/v1.8.0-1.8.0%20latest-2ea44f?style=flat-square)](https://github.com/Etherealmber/atlas-commerce-android/releases) | ![558 commits](https://img.shields.io/badge/558%20commits-106%20PRs-2ea44f?style=flat-square) ![releases](https://img.shields.io/badge/releases-7-2ea44f?style=flat-square) |
+| [**atlas-commerce**](https://github.com/Etherealmber/atlas-commerce) | ERP / POS / invoicing core — Cloudflare Workers, D1, R2, React | ![0.9.3-beta](https://img.shields.io/badge/version-0.9.3-beta-8250df?style=flat-square) | ![646 commits](https://img.shields.io/badge/646%20commits-233%20PRs-2ea44f?style=flat-square) |
+| [**atlas-commerce-android**](https://github.com/Etherealmber/atlas-commerce-android) | Native Android companion — Kotlin + Jetpack Compose, Android 11+ | [![1.8.0](https://img.shields.io/badge/v1.8.0-1.8.0%20latest-2ea44f?style=flat-square)](https://github.com/Etherealmber/atlas-commerce-android/releases) | ![589 commits](https://img.shields.io/badge/589%20commits-112%20PRs-2ea44f?style=flat-square) ![releases](https://img.shields.io/badge/releases-7-2ea44f?style=flat-square) |
 | [**atlas-commerce-desktop**](https://github.com/Etherealmber/atlas-commerce-desktop) | Native desktop client — Rust + egui, Windows / Linux / macOS (unsigned) | ![0.3.2](https://img.shields.io/badge/version-0.3.2-8250df?style=flat-square) | ![454 commits](https://img.shields.io/badge/454%20commits-32%20PRs-2ea44f?style=flat-square) |
 | [**afmarbre-main**](https://github.com/Etherealmber/afmarbre-main) | Client platform — catalogue, quotes, CMS admin on Workers | `—` | ![5 commits](https://img.shields.io/badge/5%20commits-0%20PRs-9e9e9e?style=flat-square) |
-| [**\.github**](https://github.com/Etherealmber/.github) | Organization profile and brand assets (this page) | `—` | ![55 commits](https://img.shields.io/badge/55%20commits-11%20PRs-2ea44f?style=flat-square) ![profile](https://img.shields.io/badge/profile-live-2ea44f?style=flat-square) |
+| [**\.github**](https://github.com/Etherealmber/.github) | Organization profile and brand assets (this page) | `—` | ![56 commits](https://img.shields.io/badge/56%20commits-11%20PRs-2ea44f?style=flat-square) ![profile](https://img.shields.io/badge/profile-live-2ea44f?style=flat-square) |
 <!-- REPOS:END -->
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?style=flat-square&logo=typescript&logoColor=white)
@@ -214,7 +214,7 @@ Honest list — these are the open items, in the order they are being worked on.
 <!-- PROGRESS:START -->
 | Product | Progress | Reading |
 |---|---|---|
-| **Atlas Commerce (web core)** | ![92%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%93-92%25-2ea44f?style=flat-square) **92 %** | `0.9.2-beta` pre-1.0 blockers closed on main; `src/` and `worker/` both type-check at **0 errors** and the guards hold them there. DGI clearance still runs on the stub adapter until the official platform opens |
+| **Atlas Commerce (web core)** | ![92%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%93-92%25-2ea44f?style=flat-square) **92 %** | `0.9.3-beta` pre-1.0 blockers closed on main; `src/` and `worker/` both type-check at **0 errors** and the guards hold them there. DGI clearance still runs on the stub adapter until the official platform opens |
 | **Atlas Commerce Android** | ![96%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88-96%25-2ea44f?style=flat-square) **96 %** | `1.8.0` — Android 11+ (`minSdk 30`); queue replay, retry policy and receipt guards covered by 18 contract tests in CI, printer permission guard added for Android 12+ |
 | **Atlas Commerce Desktop** | ![40%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93-40%25-fbca04?style=flat-square) **40 %** | On hold at `0.3.2` — paused until the login issue is fixed. Builds for Windows, Linux and macOS; packages are unsigned on purpose until there is a public release |
 | **Atlas Shop** | ![0%](https://img.shields.io/badge/%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93-0%25-6e7681?style=flat-square) **0 %** | Not started — the next major build |
@@ -284,7 +284,7 @@ A **Discord server** for Etherealmber is on the way, with an **Atlas bot** to go
 <!-- ROADMAP:START -->
 | Quarter | Milestone | Scope | Status | Progress |
 |---|---|---|---|---|
-| **Q4 2026** | **Atlas Commerce 1.0** | Blocker sweep done on main (#215, #216): DGI mounted, dunning fixed, blank-D1 migrations green in CI, payroll gate aligned. Remaining: DGI live submission once the official platform opens _(live: `0.9.2-beta`)_ | 🟡 in progress | ![92%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%93-92%25-2ea44f?style=flat-square) |
+| **Q4 2026** | **Atlas Commerce 1.0** | Blocker sweep done on main (#215, #216): DGI mounted, dunning fixed, blank-D1 migrations green in CI, payroll gate aligned. Remaining: DGI live submission once the official platform opens _(live: `0.9.3-beta`)_ | 🟡 in progress | ![92%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%93-92%25-2ea44f?style=flat-square) |
 | **Q4 2026** | **Atlas Commerce Android 2.0** | Contract tests, conflict/rejected split and held-write exit merged (#131); one polish pass left, then the 2.0 release _(live: `1.8.0`)_ | 🟡 in progress | ![96%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88-96%25-2ea44f?style=flat-square) |
 | **Q4 2026** | **Desktop — resume after login fix** | Paused: not extended until the login issue is fixed on web. Windows, Linux and macOS all build in CI; packages stay unsigned until a public release is planned _(live: `0.3.2`)_ | ⚪ blocked | ![40%](https://img.shields.io/badge/%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93-40%25-fbca04?style=flat-square) |
 | **Q1 2027** | **Atlas Shop v1 — catalogue** | New repository; products, prices, stock availability and media read live from Atlas Commerce via Partner API v1 | ⚪ not started | ![0%](https://img.shields.io/badge/%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93-0%25-6e7681?style=flat-square) |
